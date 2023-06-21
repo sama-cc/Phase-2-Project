@@ -2,10 +2,15 @@ import React from "react";
 import TeamForm from "./TeamForm";
 import TeamList from "./TeamList";
 
-function Teams() {
+function Teams({ characters }) {
+  function handleSubmit(e) {
+    e.preventDefault();
+    alert("Team Submitted.");
+  }
+
   return (
     <div>
-      <TeamForm />
+      <TeamForm characters={characters} handleSubmit={handleSubmit} />
       <TeamList />
     </div>
   );
