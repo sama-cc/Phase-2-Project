@@ -5,7 +5,7 @@ import Box from "@mui/material/Box";
 
 function Nav() {
   return (
-    <div>
+    <div className="nav">
       <Box
         sx={{
           display: "flex",

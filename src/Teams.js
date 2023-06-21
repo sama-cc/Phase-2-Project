@@ -9,7 +9,7 @@ function Teams({ characters }) {
   }
 
   return (
-    <div>
+    <div className="team-container">
       <TeamForm characters={characters} handleSubmit={handleSubmit} />
       <TeamList />
     </div>
