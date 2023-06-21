@@ -16,7 +16,7 @@ function Nav() {
           },
         }}
       >
-        <ButtonGroup variant="text" aria-label="text button group">
+        <ButtonGroup variant="text" aria-label="text button group" size="small">
           <Button>Characters</Button>
           <Button>Teams</Button>
         </ButtonGroup>
