@@ -1,7 +1,14 @@
 import React from "react";
+import TeamForm from "./TeamForm";
+import TeamList from "./TeamList";
 
 function Teams() {
-  return "This is the Teams page.";
+  return (
+    <div>
+      <TeamForm />
+      <TeamList />
+    </div>
+  );
 }
 
 export default Teams;
