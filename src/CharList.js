@@ -1,9 +1,54 @@
 import React from "react";
+import Box from "@mui/material/Box";
+import { styled } from "@mui/material/styles";
+import Paper from "@mui/material/Paper";
+import Grid from "@mui/material/Grid";
+import StarIcon from "@mui/icons-material/Star";
 
-function CharList() {
+function CharList({ characters }) {
+  const Item = styled(Paper)(() => ({
+    backgroundColor: "lightskyblue",
+    padding: 8,
+    textAlign: "center",
+    color: "white",
+  }));
+  const charList = characters.map((char) => {
     return (
-        "This is the Charlist."
-    )
+      <Grid key={char} item xs={3}>
+        <Item elevation={3}>
+          <h3>{char.name}</h3>
+          <p>{char.vision}</p>
+          <p>{char.weapon}</p>
+          <p>
+            {char.rarity === "4_star" ? (
+              <>
+                <StarIcon />
+                <StarIcon />
+                <StarIcon />
+                <StarIcon />
+              </>
+            ) : (
+              <>
+                <StarIcon />
+                <StarIcon />
+                <StarIcon />
+                <StarIcon />
+                <StarIcon />
+              </>
+            )}
+          </p>
+        </Item>
+      </Grid>
+    );
+  });
+
+  return (
+    <Box sx={{ m: 4 }}>
+      <Grid container spacing={4}>
+        {charList}
+      </Grid>
+    </Box>
+  );
 }
 
-export default CharList
+export default CharList;

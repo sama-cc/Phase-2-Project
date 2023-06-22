@@ -6,8 +6,8 @@ import Button from "@mui/material/Button";
 
 function TeamForm({ characters, handleSubmit }) {
   const charOptions = characters.map((option) => (
-    <MenuItem key={option} value={option}>
-      {option}
+    <MenuItem key={option.name} value={option.name}>
+      {option.name}
     </MenuItem>
   ));
 
