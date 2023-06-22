@@ -17,6 +17,9 @@ function CharList({ characters }) {
       <Grid key={char} item xs={3}>
         <Item elevation={3}>
           <h3>{char.name}</h3>
+          <img
+            src={`https://cdn.wanderer.moe/genshin-impact/character-icons/${char.name.toLowerCase()}-icon.png`}
+          />
           <p>{char.vision}</p>
           <p>{char.weapon}</p>
           <p>
