@@ -57,11 +57,23 @@ function CharList({ characters }) {
     textAlign: "center",
     color: "white",
   }));
+
   const charList = characters.map((char) => {
     return (
       <Grid key={char.id} item xs={3}>
-        <Item elevation={3}>
-          <h3>{char.name}</h3>
+        <Item elevation={8}>
+          <div
+            className="nameBar"
+            style={{
+              backgroundImage: `url("https://cdn.wanderer.moe/genshin-impact/namecards/${handleName(
+                char.name.toLowerCase()
+              )}-bar.png")`,
+              width: "auto",
+              height: "auto",
+            }}
+          >
+            <h3>{char.name}</h3>
+          </div>
           {char.name === "Traveller (male)" ||
           char.name === "Traveller (female)" ? (
             handleAetherLumine(char.name)
