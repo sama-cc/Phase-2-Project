@@ -31,14 +31,14 @@ const [formData, setFormData] = useState(
       })
     })
     .then(r=>r.json())
-    .then(data=>setTeams({
+    .then(data=>setTeams([...teams, {
       "char1": formData.char1,
       "char2": formData.char2,
       "char3": formData.char3,
       "char4": formData.char4,
       "name": formData.name,
       "id": data.id
-    }))
+    }]))
   }
 
   return (

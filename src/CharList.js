@@ -28,7 +28,7 @@ function CharList({ characters, handleAetherLumine, handleName }) {
               height: "auto",
             }}
           >
-            <h3>{char.name}</h3>
+            <h2>{char.name}</h2>
           </div>
           {char.name === "Traveller (male)" ||
           char.name === "Traveller (female)" ? (
@@ -42,8 +42,8 @@ function CharList({ characters, handleAetherLumine, handleName }) {
               className="card"
             />
           )}
-          <p>{char.vision}</p>
-          <p>{char.weapon}</p>
+          <p><h4>{char.vision}</h4></p>
+          <p><h4>{char.weapon}</h4></p>
           <p>
             {char.rarity === "4_star" ? (
               <>
