@@ -1,6 +1,7 @@
 body {
   background-color: midnightblue;
   margin: 0;
+  color: midnightblue;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -15,7 +16,7 @@ code {
 
 div#root {
   background-color: white;
-  width: 90%;
+  width: 75%;
   border: 1px;
   border-style: ridge;
   position: absolute;
@@ -28,4 +29,17 @@ div.main-header {
   background-size: cover;
   width: auto;
   height: 200px;
+}
+
+div.nav {
+  background-color: lightskyblue;
+}
+
+div.team-container {
+  text-align: center;
+}
+
+img.card {
+  width: 100%;
+  height: 100%;
 }

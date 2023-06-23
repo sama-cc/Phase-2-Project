@@ -5,7 +5,7 @@ import Teams from "./Teams";
 import CharList from "./CharList";
 
 function App() {
-  const [page, setPage] = useState("Team");
+  const [page, setPage] = useState(true);
   const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ function App() {
       .then((data) =>
         setCharacters(
           data.results.map((char) => {
-            return char.name;
+            return char;
           })
         )
       );
@@ -24,7 +24,11 @@ function App() {
     <main>
       <Header />
       <Nav page={page} setPage={setPage} />
-      {page === "Team" ? <Teams characters={characters} /> : <CharList />}
+      {page ? (
+        <Teams characters={characters} />
+      ) : (
+        <CharList characters={characters} />
+      )}
     </main>
   );
 }
