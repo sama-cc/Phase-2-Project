@@ -4,7 +4,13 @@ import TextField from "@mui/material/TextField";
 import MenuItem from "@mui/material/MenuItem";
 import Button from "@mui/material/Button";
 
-function TeamForm({ characters, handleSubmit }) {
+function TeamForm({ characters, handleSubmit, formData, setFormData }) {
+
+  function handleChange(e) {
+    console.log(e.target.value)
+    setFormData({...formData, [e.target.name]: e.target.value})
+  }
+
   const charOptions = characters.map((option) => (
     <MenuItem key={option.name} value={option.name}>
       {option.name}
@@ -26,8 +32,10 @@ function TeamForm({ characters, handleSubmit }) {
           <TextField
             id="team-name"
             label="Team Name"
-            defaultValue=""
             size="small"
+            onChange={e=>handleChange(e)}
+            value={formData.name}
+            name="name"
           />
         </div>
         <div>
@@ -35,8 +43,10 @@ function TeamForm({ characters, handleSubmit }) {
             id="character-1"
             select
             label="Select Character 1"
-            defaultValue=""
             size="small"
+            name="char1"
+            onChange={e=>handleChange(e)}
+            value={formData.char1}
           >
             {charOptions}
           </TextField>
@@ -46,6 +56,9 @@ function TeamForm({ characters, handleSubmit }) {
             label="Select Character 2"
             defaultValue=""
             size="small"
+            name="char2"
+            onChange={e=>handleChange(e)}
+            value={formData.char2}
           >
             {charOptions}
           </TextField>
@@ -55,6 +68,9 @@ function TeamForm({ characters, handleSubmit }) {
             label="Select Character 3"
             defaultValue=""
             size="small"
+            name="char3"
+            onChange={e=>handleChange(e)}
+            value={formData.char3}
           >
             {charOptions}
           </TextField>
@@ -64,6 +80,9 @@ function TeamForm({ characters, handleSubmit }) {
             label="Select Character 4"
             defaultValue=""
             size="small"
+            name="char4"
+            onChange={e=>handleChange(e)}
+            value={formData.char4}
           >
             {charOptions}
           </TextField>

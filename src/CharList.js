@@ -5,52 +5,8 @@ import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import StarIcon from "@mui/icons-material/Star";
 
-function CharList({ characters }) {
-  function handleName(name) {
-    switch (name) {
-      case "hu tao":
-        return "hu-tao";
-      case "kazuha":
-        return "kaedehara-kazuha";
-      case "ayaka":
-        return "kamisato-ayaka";
-      case "ayato":
-        return "kamisato-ayato";
-      case "sara":
-        return "kujou-sara";
-      case "raiden shogun":
-        return "raiden-shogun";
-      case "kokomi":
-        return "sangonomiya-kokomi";
-      case "itto":
-        return "arataki-itto";
-      case "yun jin":
-        return "yun-jin";
-      case "yae":
-        return "yae-miko";
-      case "kuki":
-        return "kuki-shinobu";
-      default:
-        return name;
-    }
-  }
-
-  function handleAetherLumine(name) {
-    return name === "Traveller (male)" ? (
-      <img
-        src={`https://static.wikia.nocookie.net/gensin-impact/images/a/a5/Aether_Icon.png`}
-        alt={name}
-        className="card"
-      />
-    ) : (
-      <img
-        src={`https://static.wikia.nocookie.net/gensin-impact/images/9/9c/Lumine_Icon.png`}
-        alt={name}
-        className="card"
-      />
-    );
-  }
-
+function CharList({ characters, handleAetherLumine, handleName }) {
+  
   const Item = styled(Paper)(() => ({
     backgroundColor: "lightskyblue",
     padding: 8,
@@ -72,7 +28,7 @@ function CharList({ characters }) {
               height: "auto",
             }}
           >
-            <h3>{char.name}</h3>
+            <h2>{char.name}</h2>
           </div>
           {char.name === "Traveller (male)" ||
           char.name === "Traveller (female)" ? (
@@ -86,8 +42,8 @@ function CharList({ characters }) {
               className="card"
             />
           )}
-          <p>{char.vision}</p>
-          <p>{char.weapon}</p>
+          <p><h4>{char.vision}</h4></p>
+          <p><h4>{char.weapon}</h4></p>
           <p>
             {char.rarity === "4_star" ? (
               <>
