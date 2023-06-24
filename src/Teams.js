@@ -17,7 +17,8 @@ const [formData, setFormData] = useState(
   function handleSubmit(e) {
     e.preventDefault();
     console.log(formData);
-    fetch ("http://localhost:3000/teams", {
+    fetch ("https://964ytk-3000.csb.app/teams", {
+    //fetch ("http://localhost:3000/teams", {
       method: "POST",
       headers: { 
         "Content-Type": "application/json", 

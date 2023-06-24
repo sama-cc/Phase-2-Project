@@ -5,10 +5,22 @@ import MenuItem from "@mui/material/MenuItem";
 import Button from "@mui/material/Button";
 
 function TeamForm({ characters, handleSubmit, formData, setFormData }) {
+  function handleTeamName(e) {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  }
 
   function handleChange(e) {
-    console.log(e.target.value)
-    setFormData({...formData, [e.target.name]: e.target.value})
+    console.log(e.target.value);
+    if (
+      e.target.value !== formData.char1 &&
+      e.target.value !== formData.char2 &&
+      e.target.value !== formData.char3 &&
+      e.target.value !== formData.char4
+    ) {
+      setFormData({ ...formData, [e.target.name]: e.target.value });
+    } else {
+      alert("This character is already on the team!");
+    }
   }
 
   const charOptions = characters.map((option) => (
@@ -33,7 +45,7 @@ function TeamForm({ characters, handleSubmit, formData, setFormData }) {
             id="team-name"
             label="Team Name"
             size="small"
-            onChange={e=>handleChange(e)}
+            onChange={(e) => handleTeamName(e)}
             value={formData.name}
             name="name"
           />
@@ -45,7 +57,7 @@ function TeamForm({ characters, handleSubmit, formData, setFormData }) {
             label="Select Character 1"
             size="small"
             name="char1"
-            onChange={e=>handleChange(e)}
+            onChange={(e) => handleChange(e)}
             value={formData.char1}
           >
             {charOptions}
@@ -57,7 +69,7 @@ function TeamForm({ characters, handleSubmit, formData, setFormData }) {
             defaultValue=""
             size="small"
             name="char2"
-            onChange={e=>handleChange(e)}
+            onChange={(e) => handleChange(e)}
             value={formData.char2}
           >
             {charOptions}
@@ -69,7 +81,7 @@ function TeamForm({ characters, handleSubmit, formData, setFormData }) {
             defaultValue=""
             size="small"
             name="char3"
-            onChange={e=>handleChange(e)}
+            onChange={(e) => handleChange(e)}
             value={formData.char3}
           >
             {charOptions}
@@ -81,7 +93,7 @@ function TeamForm({ characters, handleSubmit, formData, setFormData }) {
             defaultValue=""
             size="small"
             name="char4"
-            onChange={e=>handleChange(e)}
+            onChange={(e) => handleChange(e)}
             value={formData.char4}
           >
             {charOptions}

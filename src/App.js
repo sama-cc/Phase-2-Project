@@ -7,21 +7,32 @@ import CharList from "./CharList";
 function App() {
   const [page, setPage] = useState(true);
   const [characters, setCharacters] = useState([]);
-  const [teams, setTeams] = useState([])
-/*
+  const [teams, setTeams] = useState([]);
+
   useEffect(() => {
-    fetch("https://gsi.fly.dev/characters?limit=100")
+    //fetch("https://gsi.fly.dev/characters?limit=100")
+    fetch("https://964ytk-3000.csb.app/characters")
       .then((r) => r.json())
       .then((data) =>
         setCharacters(
-          data.results.map((char) => {
+          data.map((char) => {
             return char;
           })
         )
       );
+
+    fetch("https://964ytk-3000.csb.app/teams")
+      .then((r) => r.json())
+      .then((data) =>
+        setTeams(
+          data.map((team) => {
+            return team;
+          })
+        )
+      );
   }, []);
-*/
-  
+
+  /*  
   useEffect(() => {
     fetch("http://localhost:3000/characters")
       .then((r) => r.json())
@@ -45,6 +56,8 @@ function App() {
 
 
   }, []);
+  
+  */
 
   function handleName(name) {
     switch (name) {
@@ -96,9 +109,19 @@ function App() {
       <Header />
       <Nav page={page} setPage={setPage} />
       {page ? (
-        <Teams characters={characters} handleName={handleName} handleAetherLumine={handleAetherLumine} teams={teams} setTeams={setTeams} />
+        <Teams
+          characters={characters}
+          handleName={handleName}
+          handleAetherLumine={handleAetherLumine}
+          teams={teams}
+          setTeams={setTeams}
+        />
       ) : (
-        <CharList characters={characters} handleName={handleName} handleAetherLumine={handleAetherLumine} />
+        <CharList
+          characters={characters}
+          handleName={handleName}
+          handleAetherLumine={handleAetherLumine}
+        />
       )}
     </main>
   );
