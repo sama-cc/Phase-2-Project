@@ -3,9 +3,11 @@ import Box from "@mui/material/Box";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
+import Button from "@mui/material/Button";
+import ButtonGroup from "@mui/material/ButtonGroup";
 
 
-function TeamList({ characters, handleAetherLumine, handleName, teams, setTeams }) {
+function TeamList({ characters, handleAetherLumine, handleName, teams, handleEdit, handleDelete, setTeams }) {
 
   const Item = styled(Paper)(() => ({
     backgroundColor: "lightskyblue",
@@ -94,6 +96,12 @@ function TeamList({ characters, handleAetherLumine, handleName, teams, setTeams 
                 </Item>
               </Grid>
             </Grid>
+          </Box>
+          <Box sx={{ m:2}}>
+          <ButtonGroup variant="contained" aria-label="text button group" size="large">
+            <Button onClick={() => handleEdit(team.id, team.name)}>Edit</Button>
+            <Button onClick={() => handleDelete(team.id)}>Delete</Button>
+          </ButtonGroup>
           </Box>
         </Item>
       </Grid>

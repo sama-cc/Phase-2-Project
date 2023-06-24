@@ -16,6 +16,37 @@ function Teams({
     char4: "",
     name: "",
   });
+  
+  function handleEdit(id, team) {
+      console.log(`${team} has been edited`)
+      /*
+      fetch (`http://localhost:3000/teams/${id}`, {
+      method: "PATCH",
+      headers: { 
+        "Content-Type": "application/json", 
+      },
+      body: JSON.stringify({
+        "correctIndex": value
+      })
+    })
+    .then(r=>r.json())
+    .then(data=>console.log("Changes saved to Team"))
+    setTeams(teams.map(t=>{
+      if (t.id === id) {
+        return {...t, "correctIndex": value}
+      } else {
+        return t
+      }
+    }))
+    */
+  }
+  
+  
+  function handleDelete(id) {
+        fetch (`http://localhost:3000/teams/${id}`, {
+      method: "DELETE"})
+      .then(()=>setTeams(()=>teams.filter(t=> t.id !== id)))
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -108,6 +139,8 @@ function Teams({
         handleName={handleName}
         teams={teams}
         setTeams={setTeams}
+        handleEdit={handleEdit}
+        handleDelete={handleDelete}
       />
     </div>
   );
