@@ -21,7 +21,41 @@ function Teams({
     e.preventDefault();
     console.log(formData);
     if (
-      formData.name !== "" &&
+      formData.name === "" &&
+      formData.char1 !== "" &&
+      formData.char2 !== "" &&
+      formData.char3 !== "" &&
+      formData.char4 !== ""
+    ) {
+      fetch("https://964ytk-3000.csb.app/teams", {
+        //fetch ("http://localhost:3000/teams", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          char1: formData.char1,
+          char2: formData.char2,
+          char3: formData.char3,
+          char4: formData.char4,
+          name: `Team ${teams.length + 1}`,
+        }),
+      })
+        .then((r) => r.json())
+        .then((data) =>
+          setTeams([
+            ...teams,
+            {
+              char1: formData.char1,
+              char2: formData.char2,
+              char3: formData.char3,
+              char4: formData.char4,
+              name: `Team ${teams.length + 1}`,
+              id: data.id,
+            },
+          ])
+        );
+    } else if (
       formData.char1 !== "" &&
       formData.char2 !== "" &&
       formData.char3 !== "" &&
@@ -56,7 +90,7 @@ function Teams({
           ])
         );
     } else {
-      alert("Please fill out all fields before saving.");
+      alert("Please select four characters before saving.");
     }
   }
 
