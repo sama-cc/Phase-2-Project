@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TeamForm from "./TeamForm";
 import TeamList from "./TeamList";
+import MenuItem from "@mui/material/MenuItem";
 
 function Teams({
   characters,
@@ -16,10 +17,34 @@ function Teams({
     char4: "",
     name: "",
   });
-  
+
+  const charOptions = characters.map((option) => (
+    <MenuItem key={option.name} value={option.name}>
+      {option.name}
+    </MenuItem>
+  ));
+
+  function handleTeamName(e) {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  }
+
+  function handleChange(e) {
+    console.log(e.target.value);
+    if (
+      e.target.value !== formData.char1 &&
+      e.target.value !== formData.char2 &&
+      e.target.value !== formData.char3 &&
+      e.target.value !== formData.char4
+    ) {
+      setFormData({ ...formData, [e.target.name]: e.target.value });
+    } else {
+      alert("This character is already on the team!");
+    }
+  }
+
   function handleEdit(id, team) {
-      console.log(`${team} has been edited`)
-      /*
+    console.log(`${team} has been edited`);
+    /*
       fetch (`http://localhost:3000/teams/${id}`, {
       method: "PATCH",
       headers: { 
@@ -40,12 +65,11 @@ function Teams({
     }))
     */
   }
-  
-  
+
   function handleDelete(id) {
-        fetch (`http://localhost:3000/teams/${id}`, {
-      method: "DELETE"})
-      .then(()=>setTeams(()=>teams.filter(t=> t.id !== id)))
+    fetch(`http://localhost:3000/teams/${id}`, {
+      method: "DELETE",
+    }).then(() => setTeams(() => teams.filter((t) => t.id !== id)));
   }
 
   function handleSubmit(e) {
@@ -132,6 +156,9 @@ function Teams({
         handleSubmit={handleSubmit}
         formData={formData}
         setFormData={setFormData}
+        handleTeamName={handleTeamName}
+        handleChange={handleChange}
+        charOptions={charOptions}
       />
       <TeamList
         characters={characters}
@@ -141,6 +168,11 @@ function Teams({
         setTeams={setTeams}
         handleEdit={handleEdit}
         handleDelete={handleDelete}
+        formData={formData}
+        setFormData={setFormData}
+        handleTeamName={handleTeamName}
+        handleChange={handleChange}
+        charOptions={charOptions}
       />
     </div>
   );

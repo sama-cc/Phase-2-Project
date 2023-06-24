@@ -1,35 +1,10 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import MenuItem from "@mui/material/MenuItem";
 import Button from "@mui/material/Button";
 
-function TeamForm({ characters, handleSubmit, formData, setFormData }) {
+function TeamForm({ characters, handleSubmit, formData, setFormData, handleTeamName, handleChange, charOptions }) {
   
-  function handleTeamName(e) {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  }
-
-  function handleChange(e) {
-    console.log(e.target.value);
-    if (
-      e.target.value !== formData.char1 &&
-      e.target.value !== formData.char2 &&
-      e.target.value !== formData.char3 &&
-      e.target.value !== formData.char4
-    ) {
-      setFormData({ ...formData, [e.target.name]: e.target.value });
-    } else {
-      alert("This character is already on the team!");
-    }
-  }
-
-  const charOptions = characters.map((option) => (
-    <MenuItem key={option.name} value={option.name}>
-      {option.name}
-    </MenuItem>
-  ));
-
   return (
     <div>
       <Box
