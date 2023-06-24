@@ -220,7 +220,7 @@ function TeamList({
               </div>
             </Box>
           </Collapse>
-          <Box container sx={{ m: 2, float: "right" }}>
+          <Box sx={{ m: 2, float: "right" }}>
             <Button variant="contained" sx={{ m: 1 }} onClick={handleHide}>
               Edit
             </Button>
