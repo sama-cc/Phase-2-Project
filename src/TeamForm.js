@@ -5,6 +5,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Button from "@mui/material/Button";
 
 function TeamForm({ characters, handleSubmit, formData, setFormData }) {
+  
   function handleTeamName(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
