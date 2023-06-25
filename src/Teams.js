@@ -66,15 +66,16 @@ function Teams({
     */
   }
 
-  function handleDelete(id) {
+  function handleDelete(id, name) {
     fetch(`http://localhost:3000/teams/${id}`, {
       method: "DELETE",
-    }).then(() => setTeams(() => teams.filter((t) => t.id !== id)));
+    }).then(() => setTeams(() => teams.filter((t) => t.name !== name)));
   }
 
   function handleSubmit(e) {
     e.preventDefault();
     console.log(formData);
+    const teamCheck = teams.find((t) => t.name === `Team ${teams.length + 1}`);
     if (
       formData.name === "" &&
       formData.char1 !== "" &&
@@ -93,7 +94,10 @@ function Teams({
           char2: formData.char2,
           char3: formData.char3,
           char4: formData.char4,
-          name: `Team ${teams.length + 1}`,
+          name:
+            teamCheck === undefined
+              ? `Team ${teams.length + 1}`
+              : `Team ${teams.length + 1} - ${formData.char1}`,
         }),
       })
         .then((r) => r.json())
@@ -105,7 +109,10 @@ function Teams({
               char2: formData.char2,
               char3: formData.char3,
               char4: formData.char4,
-              name: `Team ${teams.length + 1}`,
+              name:
+                teamCheck === undefined
+                  ? `Team ${teams.length + 1}`
+                  : `Team ${teams.length + 1} - ${formData.char1}`,
               id: data.id,
             },
           ])

@@ -22,10 +22,10 @@ function TeamList({
   handleChange,
   charOptions,
 }) {
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState(0);
 
-  const handleHide = () => {
-    setChecked((prev) => !prev);
+  const handleHide = (id) => {
+    checked === id ? setChecked(0) : setChecked(id);
   };
 
   const Item = styled(Paper)(() => ({
@@ -37,7 +37,7 @@ function TeamList({
 
   const teamList = teams.map((team) => {
     return (
-      <Grid key={team.id} item xs={12}>
+      <Grid key={team.name} item xs={12}>
         <Item elevation={8}>
           <h3>{team.name}</h3>
           <Box sx={{ m: 4 }}>
@@ -140,7 +140,7 @@ function TeamList({
               </Grid>
             </Grid>
           </Box>
-          <Collapse in={checked}>
+          <Collapse in={checked === team.id}>
             <Box
               component="form"
               sx={{
@@ -149,7 +149,7 @@ function TeamList({
               noValidate
               autoComplete="off"
             >
-              <h3>Create Team</h3>
+              <h3>Edit Team</h3>
               <div>
                 <TextField
                   id="team-name"
@@ -221,13 +221,17 @@ function TeamList({
             </Box>
           </Collapse>
           <Box sx={{ m: 2, float: "right" }}>
-            <Button variant="contained" sx={{ m: 1 }} onClick={handleHide}>
+            <Button
+              variant="contained"
+              sx={{ m: 1 }}
+              onClick={() => handleHide(team.id)}
+            >
               Edit
             </Button>
             <Button
               variant="contained"
               sx={{ m: 1 }}
-              onClick={() => handleDelete(team.id)}
+              onClick={() => handleDelete(team.id, team.name)}
             >
               Delete
             </Button>
