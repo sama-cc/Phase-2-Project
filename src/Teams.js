@@ -75,7 +75,14 @@ function Teams({
   function handleSubmit(e) {
     e.preventDefault();
     console.log(formData);
-    const teamCheck = teams.find((t) => t.name === `Team ${teams.length + 1}`);
+
+    function teamCheck(tName = teams.length) {
+      const tCheck = teams.find(
+        (t) => t.name.toLowerCase() === `Team ${tName}`.toLowerCase()
+      );
+      return tCheck === undefined ? `Team ${tName}` : teamCheck(tName + 1);
+    }
+
     if (
       formData.name === "" &&
       formData.char1 !== "" &&
@@ -94,10 +101,7 @@ function Teams({
           char2: formData.char2,
           char3: formData.char3,
           char4: formData.char4,
-          name:
-            teamCheck === undefined
-              ? `Team ${teams.length + 1}`
-              : `Team ${teams.length + 1} - ${formData.char1}`,
+          name: teamCheck(),
         }),
       })
         .then((r) => r.json())
@@ -109,10 +113,7 @@ function Teams({
               char2: formData.char2,
               char3: formData.char3,
               char4: formData.char4,
-              name:
-                teamCheck === undefined
-                  ? `Team ${teams.length + 1}`
-                  : `Team ${teams.length + 1} - ${formData.char1}`,
+              name: teamCheck(),
               id: data.id,
             },
           ])
