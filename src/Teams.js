@@ -18,6 +18,15 @@ function Teams({
     name: "",
   });
 
+  const [editData, setEditData] = useState({
+    char1: "",
+    char2: "",
+    char3: "",
+    char4: "",
+    name: "",
+    id: ""
+  });
+
   const charOptions = characters.map((option) => (
     <MenuItem key={option.name} value={option.name}>
       {option.name}
@@ -26,6 +35,10 @@ function Teams({
 
   function handleTeamName(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  }
+
+  function handleEditName(e) {
+    setFormData({ ...editData, [e.target.name]: e.target.value });
   }
 
   function handleChange(e) {
@@ -42,8 +55,23 @@ function Teams({
     }
   }
 
-  function handleEdit(id, team) {
-    console.log(`${team} has been edited`);
+  function handleEditChange(e) {
+    console.log(e.target.value);
+    if (
+      e.target.value !== editData.char1 &&
+      e.target.value !== editData.char2 &&
+      e.target.value !== editData.char3 &&
+      e.target.value !== editData.char4
+    ) {
+      setEditData({ ...editData, [e.target.name]: e.target.value });
+    } else {
+      alert("This character is already on the team!");
+    }
+  }
+
+  function handleEdit(e, id) {
+    e.preventDefault();
+
     /*
       fetch (`http://localhost:3000/teams/${id}`, {
       method: "PATCH",
@@ -90,8 +118,7 @@ function Teams({
       formData.char3 !== "" &&
       formData.char4 !== ""
     ) {
-      fetch("https://964ytk-3000.csb.app/teams", {
-        //fetch ("http://localhost:3000/teams", {
+      fetch ("http://localhost:3000/teams", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -123,9 +150,8 @@ function Teams({
       formData.char2 !== "" &&
       formData.char3 !== "" &&
       formData.char4 !== ""
-    ) {
-      fetch("https://964ytk-3000.csb.app/teams", {
-        //fetch ("http://localhost:3000/teams", {
+    ) {      
+      fetch ("http://localhost:3000/teams", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -181,6 +207,10 @@ function Teams({
         handleTeamName={handleTeamName}
         handleChange={handleChange}
         charOptions={charOptions}
+        editData={editData}
+        setEditData={setEditData}
+        handleEditName={handleEditName}
+        handleEditChange={handleEditChange}
       />
     </div>
   );

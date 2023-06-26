@@ -21,11 +21,24 @@ function TeamList({
   handleTeamName,
   handleChange,
   charOptions,
+  editData,
+  setEditData,
+  handleEditChange,
+  handleEditName
 }) {
   const [checked, setChecked] = useState(0);
 
-  const handleHide = (id) => {
+  const handleHide = (id, name, c1, c2, c3, c4) => {
     checked === id ? setChecked(0) : setChecked(id);
+    setEditData({
+      char1: c1,
+      char2: c2,
+      char3: c3,
+      char4: c4,
+      name: name,
+      id: id
+    })
+    console.log(editData)
   };
 
   const Item = styled(Paper)(() => ({
@@ -155,8 +168,8 @@ function TeamList({
                   id="team-name"
                   label="Team Name"
                   size="small"
-                  onChange={(e) => handleTeamName(e)}
-                  value={formData.name}
+                  onChange={(e) => handleEditName(e)}
+                  value={editData.name}
                   name="name"
                 />
               </div>
@@ -167,8 +180,8 @@ function TeamList({
                   label="Select Character 1"
                   size="small"
                   name="char1"
-                  onChange={(e) => handleChange(e)}
-                  value={formData.char1}
+                  onChange={(e) => handleEditChange(e)}
+                  value={editData.char1}
                 >
                   {charOptions}
                 </TextField>
@@ -179,8 +192,8 @@ function TeamList({
                   defaultValue=""
                   size="small"
                   name="char2"
-                  onChange={(e) => handleChange(e)}
-                  value={formData.char2}
+                  onChange={(e) => handleEditChange(e)}
+                  value={editData.char2}
                 >
                   {charOptions}
                 </TextField>
@@ -191,8 +204,8 @@ function TeamList({
                   defaultValue=""
                   size="small"
                   name="char3"
-                  onChange={(e) => handleChange(e)}
-                  value={formData.char3}
+                  onChange={(e) => handleEditChange(e)}
+                  value={editData.char3}
                 >
                   {charOptions}
                 </TextField>
@@ -203,8 +216,8 @@ function TeamList({
                   defaultValue=""
                   size="small"
                   name="char4"
-                  onChange={(e) => handleChange(e)}
-                  value={formData.char4}
+                  onChange={(e) => handleEditChange(e)}
+                  value={editData.char4}
                 >
                   {charOptions}
                 </TextField>
@@ -212,7 +225,7 @@ function TeamList({
               <div>
                 <Button
                   variant="contained"
-                  onClick={() => handleEdit(team.id, team.name)}
+                  onClick={(e) => handleEdit(e)}
                   size="small"
                 >
                   Save
@@ -224,7 +237,7 @@ function TeamList({
             <Button
               variant="contained"
               sx={{ m: 1 }}
-              onClick={() => handleHide(team.id)}
+              onClick={() => handleHide(team.id, team.name, team.char1, team.char2, team.char3, team.char4)}
             >
               Edit
             </Button>
