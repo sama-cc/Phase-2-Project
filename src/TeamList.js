@@ -4,41 +4,30 @@ import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
-import ButtonGroup from "@mui/material/ButtonGroup";
 import Collapse from "@mui/material/Collapse";
-import TextField from "@mui/material/TextField";
+import EditForm from "./EditForm";
 
 function TeamList({
   characters,
   handleAetherLumine,
   handleName,
   teams,
-  handleEdit,
-  handleDelete,
   setTeams,
-  formData,
-  setFormData,
-  handleTeamName,
-  handleChange,
   charOptions,
-  editData,
-  setEditData,
-  handleEditChange,
-  handleEditName
-}) {
+}) {  
+  
+  console.log("TeamList was called")
+  
   const [checked, setChecked] = useState(0);
 
-  const handleHide = (id, name, c1, c2, c3, c4) => {
-    checked === id ? setChecked(0) : setChecked(id);
-    setEditData({
-      char1: c1,
-      char2: c2,
-      char3: c3,
-      char4: c4,
-      name: name,
-      id: id
-    })
-    console.log(editData)
+  function handleDelete(id, name) {
+    fetch(`http://localhost:3000/teams/${id}`, {
+      method: "DELETE",
+    }).then(() => setTeams(() => teams.filter((t) => t.name !== name)));
+  }
+
+  function handleHide(id) {
+   return checked === id ? setChecked(0) : setChecked(id);
   };
 
   const Item = styled(Paper)(() => ({
@@ -49,6 +38,7 @@ function TeamList({
   }));
 
   const teamList = teams.map((team) => {
+    console.log("I've been mapped")
     return (
       <Grid key={team.name} item xs={12}>
         <Item elevation={8}>
@@ -154,90 +144,13 @@ function TeamList({
             </Grid>
           </Box>
           <Collapse in={checked === team.id}>
-            <Box
-              component="form"
-              sx={{
-                "& .MuiTextField-root": { m: 1, width: "25ch" },
-              }}
-              noValidate
-              autoComplete="off"
-            >
-              <h3>Edit Team</h3>
-              <div>
-                <TextField
-                  id="team-name"
-                  label="Team Name"
-                  size="small"
-                  onChange={(e) => handleEditName(e)}
-                  value={editData.name}
-                  name="name"
-                />
-              </div>
-              <div>
-                <TextField
-                  id="character-1"
-                  select
-                  label="Select Character 1"
-                  size="small"
-                  name="char1"
-                  onChange={(e) => handleEditChange(e)}
-                  value={editData.char1}
-                >
-                  {charOptions}
-                </TextField>
-                <TextField
-                  id="character-2"
-                  select
-                  label="Select Character 2"
-                  defaultValue=""
-                  size="small"
-                  name="char2"
-                  onChange={(e) => handleEditChange(e)}
-                  value={editData.char2}
-                >
-                  {charOptions}
-                </TextField>
-                <TextField
-                  id="character-3"
-                  select
-                  label="Select Character 3"
-                  defaultValue=""
-                  size="small"
-                  name="char3"
-                  onChange={(e) => handleEditChange(e)}
-                  value={editData.char3}
-                >
-                  {charOptions}
-                </TextField>
-                <TextField
-                  id="character-4"
-                  select
-                  label="Select Character 4"
-                  defaultValue=""
-                  size="small"
-                  name="char4"
-                  onChange={(e) => handleEditChange(e)}
-                  value={editData.char4}
-                >
-                  {charOptions}
-                </TextField>
-              </div>
-              <div>
-                <Button
-                  variant="contained"
-                  onClick={(e) => handleEdit(e)}
-                  size="small"
-                >
-                  Save
-                </Button>
-              </div>
-            </Box>
+            <EditForm name={team.name} id={team.id} char1={team.char1} char2={team.char2} char3={team.char3} char4={team.char4} teams={teams} setTeams={setTeams} charOptions={charOptions} />
           </Collapse>
           <Box sx={{ m: 2, float: "right" }}>
             <Button
               variant="contained"
               sx={{ m: 1 }}
-              onClick={() => handleHide(team.id, team.name, team.char1, team.char2, team.char3, team.char4)}
+              onClick={() => handleHide(team.id)}
             >
               Edit
             </Button>

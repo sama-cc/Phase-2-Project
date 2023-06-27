@@ -1,9 +1,121 @@
-import React from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 
-function TeamForm({ characters, handleSubmit, formData, setFormData, handleTeamName, handleChange, charOptions }) {
+function TeamForm({ characters, charOptions, teams, setTeams }) {
+
+  console.log("TeamForm was called")
+
+  const [formData, setFormData] = useState({
+    char1: "",
+    char2: "",
+    char3: "",
+    char4: "",
+    name: "",
+  });
+
+  function handleTeamName(e) {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  }
+
+  function handleChange(e) {
+    console.log(e.target.value);
+    if (
+      e.target.value !== formData.char1 &&
+      e.target.value !== formData.char2 &&
+      e.target.value !== formData.char3 &&
+      e.target.value !== formData.char4
+    ) {
+      setFormData({ ...formData, [e.target.name]: e.target.value });
+    } else {
+      alert("This character is already on the team!");
+    }
+  }
+
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log(formData);
+
+    function teamCheck(tName = teams.length) {
+      const tCheck = teams.find(
+        (t) => t.name.toLowerCase() === `Team ${tName}`.toLowerCase()
+      );
+      return tCheck === undefined ? `Team ${tName}` : teamCheck(tName + 1);
+    }
+
+    if (
+      formData.name === "" &&
+      formData.char1 !== "" &&
+      formData.char2 !== "" &&
+      formData.char3 !== "" &&
+      formData.char4 !== ""
+    ) {
+      fetch ("http://localhost:3000/teams", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          char1: formData.char1,
+          char2: formData.char2,
+          char3: formData.char3,
+          char4: formData.char4,
+          name: teamCheck(),
+        }),
+      })
+        .then((r) => r.json())
+        .then((data) =>
+          setTeams([
+            ...teams,
+            {
+              char1: formData.char1,
+              char2: formData.char2,
+              char3: formData.char3,
+              char4: formData.char4,
+              name: teamCheck(),
+              id: data.id,
+            },
+          ])
+        );
+    } else if (
+      formData.char1 !== "" &&
+      formData.char2 !== "" &&
+      formData.char3 !== "" &&
+      formData.char4 !== ""
+    ) {      
+      fetch ("http://localhost:3000/teams", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          char1: formData.char1,
+          char2: formData.char2,
+          char3: formData.char3,
+          char4: formData.char4,
+          name: formData.name,
+        }),
+      })
+        .then((r) => r.json())
+        .then((data) =>
+          setTeams([
+            ...teams,
+            {
+              char1: formData.char1,
+              char2: formData.char2,
+              char3: formData.char3,
+              char4: formData.char4,
+              name: formData.name,
+              id: data.id,
+            },
+          ])
+        );
+    } else {
+      alert("Please select four characters before saving.");
+    }
+  }
   
   return (
     <div>
