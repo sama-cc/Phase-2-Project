@@ -3,9 +3,10 @@ import Header from "./Header";
 import Nav from "./Nav";
 import Teams from "./Teams";
 import CharList from "./CharList";
+import { Redirect, Route } from "react-router-dom";
 
 function App() {
-  const [page, setPage] = useState(true);
+  //const [page, setPage] = useState(true);
   const [characters, setCharacters] = useState([]);
   const [teams, setTeams] = useState([]);
 
@@ -107,9 +108,28 @@ function App() {
 
   return (
     <main>
-      <Header />
-      <Nav page={page} setPage={setPage} />
-      {page ? (
+      <Route path="/">
+        <Header />
+      </Route>
+      <Nav />
+      <Route path="/teams">
+        <Teams
+            characters={characters}
+            handleName={handleName}
+            handleAetherLumine={handleAetherLumine}
+            teams={teams}
+            setTeams={setTeams}
+          />
+        </Route>
+        <Route path="/characters">
+        <CharList
+          characters={characters}
+          handleName={handleName}
+          handleAetherLumine={handleAetherLumine}
+        />
+        </Route>
+        <Redirect from="/" to="/characters" />
+      {/*page ? (
         <Teams
           characters={characters}
           handleName={handleName}
@@ -123,7 +143,7 @@ function App() {
           handleName={handleName}
           handleAetherLumine={handleAetherLumine}
         />
-      )}
+      )*/}
     </main>
   );
 }

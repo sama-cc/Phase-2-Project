@@ -2,8 +2,9 @@ import React from "react";
 import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import Box from "@mui/material/Box";
+import { Link } from "react-router-dom";
 
-function Nav({ page, setPage }) {
+function Nav() {
   return (
     <div className="nav">
       <Box
@@ -17,8 +18,8 @@ function Nav({ page, setPage }) {
         }}
       >
         <ButtonGroup variant="text" aria-label="text button group" size="large">
-          <Button onClick={() => setPage(false)}>Characters</Button>
-          <Button onClick={() => setPage(true)}>Teams</Button>
+          <Button component={Link} to={'/characters'}>Characters</Button>
+          <Button component={Link} to={'/teams'}>Teams</Button>
         </ButtonGroup>
       </Box>
     </div>

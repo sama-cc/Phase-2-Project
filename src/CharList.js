@@ -18,6 +18,7 @@ function CharList({ characters, handleAetherLumine, handleName }) {
     return (
       <Grid key={char.id} item xs={3}>
         <Item elevation={8}>
+          {/*
           <div
             className="nameBar"
             style={{
@@ -28,8 +29,11 @@ function CharList({ characters, handleAetherLumine, handleName }) {
               height: "auto",
             }}
           >
+          */}
             <h2>{char.name}</h2>
+            {/*
           </div>
+        */}
           {char.name === "Traveller (male)" ||
           char.name === "Traveller (female)" ? (
             handleAetherLumine(char.name)

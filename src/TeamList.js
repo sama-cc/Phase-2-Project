@@ -14,10 +14,8 @@ function TeamList({
   teams,
   setTeams,
   charOptions,
-}) {  
-  
-  console.log("TeamList was called")
-  
+}) {    
+    
   const [checked, setChecked] = useState(0);
 
   function handleDelete(id, name) {
@@ -37,8 +35,7 @@ function TeamList({
     color: "white",
   }));
 
-  const teamList = teams.map((team) => {
-    console.log("I've been mapped")
+  const teamList = teams.map((team) => {    
     return (
       <Grid key={team.name} item xs={12}>
         <Item elevation={8}>

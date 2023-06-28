@@ -11,8 +11,6 @@ function Teams({
   setTeams,
 }) {
 
-  console.log("Teams was called")
-
   const charOptions = characters.map((option) => (
     <MenuItem key={option.name} value={option.name}>
       {option.name}

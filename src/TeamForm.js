@@ -5,8 +5,6 @@ import Button from "@mui/material/Button";
 
 function TeamForm({ characters, charOptions, teams, setTeams }) {
 
-  console.log("TeamForm was called")
-
   const [formData, setFormData] = useState({
     char1: "",
     char2: "",
@@ -20,7 +18,6 @@ function TeamForm({ characters, charOptions, teams, setTeams }) {
   }
 
   function handleChange(e) {
-    console.log(e.target.value);
     if (
       e.target.value !== formData.char1 &&
       e.target.value !== formData.char2 &&
@@ -36,8 +33,6 @@ function TeamForm({ characters, charOptions, teams, setTeams }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(formData);
-
     function teamCheck(tName = teams.length) {
       const tCheck = teams.find(
         (t) => t.name.toLowerCase() === `Team ${tName}`.toLowerCase()
