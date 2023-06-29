@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
-import { styled } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 import Collapse from "@mui/material/Collapse";
@@ -14,6 +12,8 @@ function TeamList({
   teams,
   setTeams,
   charOptions,
+  Item,
+  getCharData
 }) {
   const [checked, setChecked] = useState(0);
 
@@ -26,23 +26,6 @@ function TeamList({
   function handleHide(id) {
     return checked === id ? setChecked(0) : setChecked(id);
   }
-
-  function getCharData(char) {
-    const charData = characters.find((c) => c.name === char);
-    return (
-      <>
-        <p>{charData.vision}</p>
-        <p>{charData.weapon}</p>
-      </>
-    );
-  }
-
-  const Item = styled(Paper)(() => ({
-    backgroundColor: "lightskyblue",
-    padding: 8,
-    textAlign: "center",
-    color: "white",
-  }));
 
   const teamList = teams.map((team) => {
     return (
