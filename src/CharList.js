@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import StarIcon from "@mui/icons-material/Star";
+import SearchBar from "./SearchBar"
 
 function CharList({ characters, handleAetherLumine, handleName }) {
-  
+  const [searchText, setSearchText] = useState("Search...");
+
   const Item = styled(Paper)(() => ({
     backgroundColor: "lightskyblue",
     padding: 8,
@@ -30,8 +32,8 @@ function CharList({ characters, handleAetherLumine, handleName }) {
             }}
           >
           */}
-            <h2>{char.name}</h2>
-            {/*
+          <h2>{char.name}</h2>
+          {/*
           </div>
         */}
           {char.name === "Traveller (male)" ||
@@ -72,11 +74,14 @@ function CharList({ characters, handleAetherLumine, handleName }) {
   });
 
   return (
-    <Box sx={{ m: 4 }}>
-      <Grid container spacing={4}>
-        {charList}
-      </Grid>
-    </Box>
+    <>
+      <SearchBar searchText={searchText} setSearchText={setSearchText} Item={Item} />
+      <Box sx={{ m: 4 }}>
+        <Grid container spacing={4}>
+          {charList}
+        </Grid>
+      </Box>
+    </>
   );
 }
 
