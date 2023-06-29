@@ -46,8 +46,8 @@ function CharList({ characters, handleAetherLumine, handleName }) {
               className="card"
             />
           )}
-          <p><h4>{char.vision}</h4></p>
-          <p><h4>{char.weapon}</h4></p>
+          <h4>{char.vision}</h4>
+          <h4>{char.weapon}</h4>
           <p>
             {char.rarity === "4_star" ? (
               <>

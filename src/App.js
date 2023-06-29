@@ -10,7 +10,7 @@ function App() {
   const [characters, setCharacters] = useState([]);
   const [teams, setTeams] = useState([]);
 
-  /*
+
   useEffect(() => {
     //fetch("https://gsi.fly.dev/characters?limit=100")
     fetch("https://964ytk-3000.csb.app/characters")
@@ -33,8 +33,8 @@ function App() {
         )
       );
   }, []);
-*/
-  
+
+  /*
   useEffect(() => {
     fetch("http://localhost:3000/characters")
       .then((r) => r.json())
@@ -58,7 +58,7 @@ function App() {
 
 
   }, []);
-  
+  */
   
 
   function handleName(name) {

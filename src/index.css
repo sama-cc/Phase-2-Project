@@ -26,7 +26,7 @@ div#root {
 
 div.main-header {
   background-image: url("https://cdn.wccftech.com/wp-content/uploads/2020/08/Genshin-Impact_Key-Art-EN-1.jpg");
-  background-size:cover;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   width: auto;
@@ -49,4 +49,8 @@ img.card {
 img.team-char-img {
   width: 100%;
   height: 100%;
+}
+
+h4 {
+  margin: 16px 0px;
 }
