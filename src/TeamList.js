@@ -14,8 +14,7 @@ function TeamList({
   teams,
   setTeams,
   charOptions,
-}) {    
-    
+}) {
   const [checked, setChecked] = useState(0);
 
   function handleDelete(id, name) {
@@ -25,8 +24,18 @@ function TeamList({
   }
 
   function handleHide(id) {
-   return checked === id ? setChecked(0) : setChecked(id);
-  };
+    return checked === id ? setChecked(0) : setChecked(id);
+  }
+
+  function getCharData(char) {
+    const charData = characters.find((c) => c.name === char);
+    return (
+      <>
+        <p>{charData.vision}</p>
+        <p>{charData.weapon}</p>
+      </>
+    );
+  }
 
   const Item = styled(Paper)(() => ({
     backgroundColor: "lightskyblue",
@@ -35,7 +44,7 @@ function TeamList({
     color: "white",
   }));
 
-  const teamList = teams.map((team) => {    
+  const teamList = teams.map((team) => {
     return (
       <Grid key={team.name} item xs={12}>
         <Item elevation={8}>
@@ -64,6 +73,7 @@ function TeamList({
                       className="team-char-img"
                     />
                   )}
+                  {getCharData(team.char1)}
                 </Item>
               </Grid>
               <Grid item xs={3}>
@@ -88,6 +98,7 @@ function TeamList({
                       className="team-char-img"
                     />
                   )}
+                  {getCharData(team.char2)}
                 </Item>
               </Grid>
               <Grid item xs={3}>
@@ -112,6 +123,7 @@ function TeamList({
                       className="team-char-img"
                     />
                   )}
+                  {getCharData(team.char3)}
                 </Item>
               </Grid>
               <Grid item xs={3}>
@@ -136,12 +148,23 @@ function TeamList({
                       className="team-char-img"
                     />
                   )}
+                  {getCharData(team.char4)}
                 </Item>
               </Grid>
             </Grid>
           </Box>
           <Collapse in={checked === team.id}>
-            <EditForm name={team.name} id={team.id} char1={team.char1} char2={team.char2} char3={team.char3} char4={team.char4} teams={teams} setTeams={setTeams} charOptions={charOptions} />
+            <EditForm
+              name={team.name}
+              id={team.id}
+              char1={team.char1}
+              char2={team.char2}
+              char3={team.char3}
+              char4={team.char4}
+              teams={teams}
+              setTeams={setTeams}
+              charOptions={charOptions}
+            />
           </Collapse>
           <Box sx={{ m: 2, float: "right" }}>
             <Button
