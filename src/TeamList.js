@@ -13,7 +13,7 @@ function TeamList({
   setTeams,
   charOptions,
   Item,
-  getCharData
+  getCharData,
 }) {
   const [checked, setChecked] = useState(0);
 

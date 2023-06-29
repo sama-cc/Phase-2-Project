@@ -192,6 +192,7 @@ function TeamForm({
         </div>
         <Grid item xs={12} sx={{ m: 4 }}>
           <Item elevation={8}>
+            <h3>{formData.name}</h3>
             <Box sx={{ m: 4 }}>
               <Grid container spacing={4}>
                 <Grid item xs={3}>
