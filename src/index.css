@@ -26,11 +26,11 @@ div#root {
 
 div.main-header {
   background-image: url("https://cdn.wccftech.com/wp-content/uploads/2020/08/Genshin-Impact_Key-Art-EN-1.jpg");
-  background-size: cover;
+  background-size: 100% 120%;
   background-position: center;
   background-repeat: no-repeat;
   width: auto;
-  height: 200px;
+  height: 300px;
 }
 
 div.nav {
