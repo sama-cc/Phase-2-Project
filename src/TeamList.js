@@ -4,28 +4,28 @@ import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
-import ButtonGroup from "@mui/material/ButtonGroup";
 import Collapse from "@mui/material/Collapse";
-import TextField from "@mui/material/TextField";
+import EditForm from "./EditForm";
 
 function TeamList({
   characters,
   handleAetherLumine,
   handleName,
   teams,
-  handleEdit,
-  handleDelete,
   setTeams,
-  formData,
-  setFormData,
-  handleTeamName,
-  handleChange,
   charOptions,
-}) {
+}) {    
+    
   const [checked, setChecked] = useState(0);
 
-  const handleHide = (id) => {
-    checked === id ? setChecked(0) : setChecked(id);
+  function handleDelete(id, name) {
+    fetch(`http://localhost:3000/teams/${id}`, {
+      method: "DELETE",
+    }).then(() => setTeams(() => teams.filter((t) => t.name !== name)));
+  }
+
+  function handleHide(id) {
+   return checked === id ? setChecked(0) : setChecked(id);
   };
 
   const Item = styled(Paper)(() => ({
@@ -35,7 +35,7 @@ function TeamList({
     color: "white",
   }));
 
-  const teamList = teams.map((team) => {
+  const teamList = teams.map((team) => {    
     return (
       <Grid key={team.name} item xs={12}>
         <Item elevation={8}>
@@ -141,84 +141,7 @@ function TeamList({
             </Grid>
           </Box>
           <Collapse in={checked === team.id}>
-            <Box
-              component="form"
-              sx={{
-                "& .MuiTextField-root": { m: 1, width: "25ch" },
-              }}
-              noValidate
-              autoComplete="off"
-            >
-              <h3>Edit Team</h3>
-              <div>
-                <TextField
-                  id="team-name"
-                  label="Team Name"
-                  size="small"
-                  onChange={(e) => handleTeamName(e)}
-                  value={formData.name}
-                  name="name"
-                />
-              </div>
-              <div>
-                <TextField
-                  id="character-1"
-                  select
-                  label="Select Character 1"
-                  size="small"
-                  name="char1"
-                  onChange={(e) => handleChange(e)}
-                  value={formData.char1}
-                >
-                  {charOptions}
-                </TextField>
-                <TextField
-                  id="character-2"
-                  select
-                  label="Select Character 2"
-                  defaultValue=""
-                  size="small"
-                  name="char2"
-                  onChange={(e) => handleChange(e)}
-                  value={formData.char2}
-                >
-                  {charOptions}
-                </TextField>
-                <TextField
-                  id="character-3"
-                  select
-                  label="Select Character 3"
-                  defaultValue=""
-                  size="small"
-                  name="char3"
-                  onChange={(e) => handleChange(e)}
-                  value={formData.char3}
-                >
-                  {charOptions}
-                </TextField>
-                <TextField
-                  id="character-4"
-                  select
-                  label="Select Character 4"
-                  defaultValue=""
-                  size="small"
-                  name="char4"
-                  onChange={(e) => handleChange(e)}
-                  value={formData.char4}
-                >
-                  {charOptions}
-                </TextField>
-              </div>
-              <div>
-                <Button
-                  variant="contained"
-                  onClick={() => handleEdit(team.id, team.name)}
-                  size="small"
-                >
-                  Save
-                </Button>
-              </div>
-            </Box>
+            <EditForm name={team.name} id={team.id} char1={team.char1} char2={team.char2} char3={team.char3} char4={team.char4} teams={teams} setTeams={setTeams} charOptions={charOptions} />
           </Collapse>
           <Box sx={{ m: 2, float: "right" }}>
             <Button
