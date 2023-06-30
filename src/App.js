@@ -2,15 +2,17 @@ import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import Nav from "./Nav";
 import Teams from "./Teams";
-import CharList from "./CharList";
+import Home from "./Home"
 import { Redirect, Route } from "react-router-dom";
+import CharContainer from "./CharContainer";
+import { styled } from "@mui/material/styles";
+import Paper from "@mui/material/Paper";
 
 function App() {
   //const [page, setPage] = useState(true);
   const [characters, setCharacters] = useState([]);
   const [teams, setTeams] = useState([]);
 
-  /*
   useEffect(() => {
     //fetch("https://gsi.fly.dev/characters?limit=100")
     fetch("https://964ytk-3000.csb.app/characters")
@@ -33,8 +35,8 @@ function App() {
         )
       );
   }, []);
-*/
-  
+
+  /*
   useEffect(() => {
     fetch("http://localhost:3000/characters")
       .then((r) => r.json())
@@ -58,8 +60,14 @@ function App() {
 
 
   }, []);
-  
-  
+  */
+
+  const Item = styled(Paper)(() => ({
+    backgroundColor: "lightskyblue",
+    padding: 3,
+    textAlign: "center",
+    color: "white",
+  }));
 
   function handleName(name) {
     switch (name) {
@@ -112,23 +120,27 @@ function App() {
         <Header />
       </Route>
       <Nav />
+            <Route path="/home">
+        <Home Item={Item} />
+      </Route>
       <Route path="/teams">
         <Teams
-            characters={characters}
-            handleName={handleName}
-            handleAetherLumine={handleAetherLumine}
-            teams={teams}
-            setTeams={setTeams}
-          />
-        </Route>
-        <Route path="/characters">
-        <CharList
+          characters={characters}
+          handleName={handleName}
+          handleAetherLumine={handleAetherLumine}
+          teams={teams}
+          setTeams={setTeams}
+          Item={Item}
+        />
+      </Route>
+      <Route path="/characters">
+        <CharContainer
           characters={characters}
           handleName={handleName}
           handleAetherLumine={handleAetherLumine}
         />
-        </Route>
-        <Redirect from="/" to="/characters" />
+      </Route>
+      <Redirect from="/" to="/home" />
       {/*page ? (
         <Teams
           characters={characters}

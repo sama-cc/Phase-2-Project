@@ -2,9 +2,18 @@ import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid";
 
-function TeamForm({ characters, charOptions, teams, setTeams }) {
-
+function TeamForm({
+  characters,
+  charOptions,
+  teams,
+  setTeams,
+  Item,
+  handleAetherLumine,
+  handleName,
+  getCharData,
+}) {
   const [formData, setFormData] = useState({
     char1: "",
     char2: "",
@@ -30,7 +39,6 @@ function TeamForm({ characters, charOptions, teams, setTeams }) {
     }
   }
 
-
   function handleSubmit(e) {
     e.preventDefault();
     function teamCheck(tName = teams.length) {
@@ -47,7 +55,7 @@ function TeamForm({ characters, charOptions, teams, setTeams }) {
       formData.char3 !== "" &&
       formData.char4 !== ""
     ) {
-      fetch ("http://localhost:3000/teams", {
+      fetch("http://localhost:3000/teams", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -79,8 +87,8 @@ function TeamForm({ characters, charOptions, teams, setTeams }) {
       formData.char2 !== "" &&
       formData.char3 !== "" &&
       formData.char4 !== ""
-    ) {      
-      fetch ("http://localhost:3000/teams", {
+    ) {
+      fetch("http://localhost:3000/teams", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -111,7 +119,7 @@ function TeamForm({ characters, charOptions, teams, setTeams }) {
       alert("Please select four characters before saving.");
     }
   }
-  
+
   return (
     <div>
       <Box
@@ -182,11 +190,144 @@ function TeamForm({ characters, charOptions, teams, setTeams }) {
             {charOptions}
           </TextField>
         </div>
-        <div>
-          <Button variant="contained" onClick={handleSubmit} size="small">
-            Save
-          </Button>
-        </div>
+        <Grid item xs={12} sx={{ m: 4 }}>
+          <Item elevation={8}>
+            <h3>{formData.name}</h3>
+            <Box sx={{ m: 4 }}>
+              <Grid container spacing={4}>
+                <Grid item xs={3}>
+                  <Item
+                    elevation={2}
+                    sx={{
+                      backgroundColor: "white",
+                      color: "midnightblue",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    <p>{formData.char1}</p>
+                    {formData.char1 === "Traveller (male)" ||
+                    formData.char1 === "Traveller (female)" ? (
+                      handleAetherLumine(formData.char1)
+                    ) : formData.char1 === "" ? (
+                      <img
+                        src={`https://scontent-atl3-1.xx.fbcdn.net/v/t1.6435-9/193500971_4390187504347051_2259047495056824025_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=b9115d&_nc_ohc=NW_EYf4QdrYAX_JgWrf&_nc_ht=scontent-atl3-1.xx&oh=00_AfCWaKxsp61iPH3LJM7jRw7-zyweRutG_8VFu9XWlVs6Og&oe=64C47211`}
+                        alt="unknown"
+                        className="team-char-img"
+                      />
+                    ) : (
+                      <img
+                        src={`https://cdn.wanderer.moe/genshin-impact/character-icons/${handleName(
+                          formData.char1.toLowerCase()
+                        )}-icon.png`}
+                        alt={formData.char1}
+                        className="team-char-img"
+                      />
+                    )}
+                    {getCharData(formData.char1)}
+                  </Item>
+                </Grid>
+                <Grid item xs={3}>
+                  <Item
+                    elevation={2}
+                    sx={{
+                      backgroundColor: "white",
+                      color: "midnightblue",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    <p>{formData.char2}</p>
+                    {formData.char2 === "Traveller (male)" ||
+                    formData.char2 === "Traveller (female)" ? (
+                      handleAetherLumine(formData.char2)
+                    ) : formData.char2 === "" ? (
+                      <img
+                        src={`https://scontent-atl3-1.xx.fbcdn.net/v/t1.6435-9/193500971_4390187504347051_2259047495056824025_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=b9115d&_nc_ohc=NW_EYf4QdrYAX_JgWrf&_nc_ht=scontent-atl3-1.xx&oh=00_AfCWaKxsp61iPH3LJM7jRw7-zyweRutG_8VFu9XWlVs6Og&oe=64C47211`}
+                        alt="unknown"
+                        className="team-char-img"
+                      />
+                    ) : (
+                      <img
+                        src={`https://cdn.wanderer.moe/genshin-impact/character-icons/${handleName(
+                          formData.char2.toLowerCase()
+                        )}-icon.png`}
+                        alt={formData.char2}
+                        className="team-char-img"
+                      />
+                    )}
+                    {getCharData(formData.char2)}
+                  </Item>
+                </Grid>
+                <Grid item xs={3}>
+                  <Item
+                    elevation={2}
+                    sx={{
+                      backgroundColor: "white",
+                      color: "midnightblue",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    <p>{formData.char3}</p>
+                    {formData.char3 === "Traveller (male)" ||
+                    formData.char3 === "Traveller (female)" ? (
+                      handleAetherLumine(formData.char3)
+                    ) : formData.char3 === "" ? (
+                      <img
+                        src={`https://scontent-atl3-1.xx.fbcdn.net/v/t1.6435-9/193500971_4390187504347051_2259047495056824025_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=b9115d&_nc_ohc=NW_EYf4QdrYAX_JgWrf&_nc_ht=scontent-atl3-1.xx&oh=00_AfCWaKxsp61iPH3LJM7jRw7-zyweRutG_8VFu9XWlVs6Og&oe=64C47211`}
+                        alt="unknown"
+                        className="team-char-img"
+                      />
+                    ) : (
+                      <img
+                        src={`https://cdn.wanderer.moe/genshin-impact/character-icons/${handleName(
+                          formData.char3.toLowerCase()
+                        )}-icon.png`}
+                        alt={formData.char3}
+                        className="team-char-img"
+                      />
+                    )}
+                    {getCharData(formData.char3)}
+                  </Item>
+                </Grid>
+                <Grid item xs={3}>
+                  <Item
+                    elevation={2}
+                    sx={{
+                      backgroundColor: "white",
+                      color: "midnightblue",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    <p>{formData.char4}</p>
+                    {formData.char4 === "Traveller (male)" ||
+                    formData.char4 === "Traveller (female)" ? (
+                      handleAetherLumine(formData.char4)
+                    ) : formData.char4 === "" ? (
+                      <img
+                        src={`https://scontent-atl3-1.xx.fbcdn.net/v/t1.6435-9/193500971_4390187504347051_2259047495056824025_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=b9115d&_nc_ohc=NW_EYf4QdrYAX_JgWrf&_nc_ht=scontent-atl3-1.xx&oh=00_AfCWaKxsp61iPH3LJM7jRw7-zyweRutG_8VFu9XWlVs6Og&oe=64C47211`}
+                        alt="unknown"
+                        className="team-char-img"
+                      />
+                    ) : (
+                      <img
+                        src={`https://cdn.wanderer.moe/genshin-impact/character-icons/${handleName(
+                          formData.char4.toLowerCase()
+                        )}-icon.png`}
+                        alt={formData.char4}
+                        className="team-char-img"
+                      />
+                    )}
+                    {getCharData(formData.char4)}
+                  </Item>
+                </Grid>
+              </Grid>
+              <div style={{ margin: "12px" }}>
+                <Button variant="contained" onClick={handleSubmit} size="small">
+                  Save
+                </Button>
+              </div>
+            </Box>
+          </Item>
+        </Grid>
       </Box>
     </div>
   );

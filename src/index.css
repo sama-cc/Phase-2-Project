@@ -25,12 +25,12 @@ div#root {
 }
 
 div.main-header {
-  background-image: url("https://cdn.wccftech.com/wp-content/uploads/2020/08/Genshin-Impact_Key-Art-EN-1.jpg");
-  background-size:cover;
+  background-image: url("https://cdn2.steamgriddb.com/file/sgdb-cdn/hero/75e913d400755a0d2782fc65e2035e97.webp");
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   width: auto;
-  height: 200px;
+  height: 250px;
 }
 
 div.nav {
@@ -49,4 +49,19 @@ img.card {
 img.team-char-img {
   width: 100%;
   height: 100%;
+}
+
+h4 {
+  margin: 16px 0px;
+}
+
+h2 {
+  text-align: center;
+}
+
+p {
+  font-weight: bold;
+  padding: 10px;
+  margin: 3px 25%;
+  text-align: justify;
 }

@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
-import { styled } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 import Collapse from "@mui/material/Collapse";
@@ -14,8 +12,9 @@ function TeamList({
   teams,
   setTeams,
   charOptions,
-}) {    
-    
+  Item,
+  getCharData,
+}) {
   const [checked, setChecked] = useState(0);
 
   function handleDelete(id, name) {
@@ -25,17 +24,10 @@ function TeamList({
   }
 
   function handleHide(id) {
-   return checked === id ? setChecked(0) : setChecked(id);
-  };
+    return checked === id ? setChecked(0) : setChecked(id);
+  }
 
-  const Item = styled(Paper)(() => ({
-    backgroundColor: "lightskyblue",
-    padding: 8,
-    textAlign: "center",
-    color: "white",
-  }));
-
-  const teamList = teams.map((team) => {    
+  const teamList = teams.map((team) => {
     return (
       <Grid key={team.name} item xs={12}>
         <Item elevation={8}>
@@ -64,6 +56,7 @@ function TeamList({
                       className="team-char-img"
                     />
                   )}
+                  {getCharData(team.char1)}
                 </Item>
               </Grid>
               <Grid item xs={3}>
@@ -88,6 +81,7 @@ function TeamList({
                       className="team-char-img"
                     />
                   )}
+                  {getCharData(team.char2)}
                 </Item>
               </Grid>
               <Grid item xs={3}>
@@ -112,6 +106,7 @@ function TeamList({
                       className="team-char-img"
                     />
                   )}
+                  {getCharData(team.char3)}
                 </Item>
               </Grid>
               <Grid item xs={3}>
@@ -136,12 +131,23 @@ function TeamList({
                       className="team-char-img"
                     />
                   )}
+                  {getCharData(team.char4)}
                 </Item>
               </Grid>
             </Grid>
           </Box>
           <Collapse in={checked === team.id}>
-            <EditForm name={team.name} id={team.id} char1={team.char1} char2={team.char2} char3={team.char3} char4={team.char4} teams={teams} setTeams={setTeams} charOptions={charOptions} />
+            <EditForm
+              name={team.name}
+              id={team.id}
+              char1={team.char1}
+              char2={team.char2}
+              char3={team.char3}
+              char4={team.char4}
+              teams={teams}
+              setTeams={setTeams}
+              charOptions={charOptions}
+            />
           </Collapse>
           <Box sx={{ m: 2, float: "right" }}>
             <Button

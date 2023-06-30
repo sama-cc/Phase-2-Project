@@ -18,6 +18,7 @@ function Nav() {
         }}
       >
         <ButtonGroup variant="text" aria-label="text button group" size="large">
+          <Button component={Link} to={'/home'}>Home</Button>
           <Button component={Link} to={'/characters'}>Characters</Button>
           <Button component={Link} to={'/teams'}>Teams</Button>
         </ButtonGroup>

@@ -9,13 +9,29 @@ function Teams({
   handleAetherLumine,
   teams,
   setTeams,
+  Item
 }) {
-
   const charOptions = characters.map((option) => (
     <MenuItem key={option.name} value={option.name}>
       {option.name}
     </MenuItem>
   ));
+
+  function getCharData(char) {
+    const charData = characters.find((c) => c.name === char);
+    return (
+      <>
+        {charData === undefined ? (
+          "No character selected"
+        ) : (
+          <>
+            <p>{charData.vision}</p>
+            <p>{charData.weapon}</p>
+          </>
+        )}
+      </>
+    );
+  }
 
   return (
     <div className="team-container">
@@ -24,6 +40,10 @@ function Teams({
         charOptions={charOptions}
         teams={teams}
         setTeams={setTeams}
+        Item={Item}
+        handleAetherLumine={handleAetherLumine}
+        handleName={handleName}
+        getCharData={getCharData}
       />
       <TeamList
         characters={characters}
@@ -32,6 +52,8 @@ function Teams({
         teams={teams}
         setTeams={setTeams}
         charOptions={charOptions}
+        Item={Item}
+        getCharData={getCharData}
       />
     </div>
   );
