@@ -57,8 +57,8 @@ export default function EditForm({
       editData.char3 !== "" &&
       editData.char4 !== ""
     ) {
-      fetch(`https://964ytk-3000.csb.app/teams${id}`, {
-        //fetch (`http://localhost:3000/teams/${id}`, {
+      //fetch(`https://964ytk-3000.csb.app/teams${id}`, {
+        fetch (`http://localhost:3000/teams/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -96,8 +96,8 @@ export default function EditForm({
       editData.char3 !== "" &&
       editData.char4 !== ""
     ) {
-      fetch(`https://964ytk-3000.csb.app/teams${id}`, {
-        //fetch (`http://localhost:3000/teams/${id}`, {
+      //fetch(`https://964ytk-3000.csb.app/teams${id}`, {
+        fetch (`http://localhost:3000/teams/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -208,6 +208,7 @@ export default function EditForm({
           variant="contained"
           onClick={(e) => handleEdit(e, id)}
           size="small"
+          sx={{ m: 2}}
         >
           Save
         </Button>

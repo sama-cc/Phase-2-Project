@@ -17,7 +17,7 @@ function Nav() {
           },
         }}
       >
-        <ButtonGroup variant="text" aria-label="text button group" size="large">
+        <ButtonGroup variant="text" aria-label="text button group" size="large" style={{ color: "white" }}>
           <Button component={Link} to={'/home'}>Home</Button>
           <Button component={Link} to={'/characters'}>Characters</Button>
           <Button component={Link} to={'/teams'}>Teams</Button>
