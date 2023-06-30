@@ -2,8 +2,11 @@ import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import Nav from "./Nav";
 import Teams from "./Teams";
+import Home from "./Home"
 import { Redirect, Route } from "react-router-dom";
 import CharContainer from "./CharContainer";
+import { styled } from "@mui/material/styles";
+import Paper from "@mui/material/Paper";
 
 function App() {
   //const [page, setPage] = useState(true);
@@ -59,6 +62,13 @@ function App() {
   }, []);
   */
 
+  const Item = styled(Paper)(() => ({
+    backgroundColor: "lightskyblue",
+    padding: 3,
+    textAlign: "center",
+    color: "white",
+  }));
+
   function handleName(name) {
     switch (name) {
       case "hu tao":
@@ -110,6 +120,9 @@ function App() {
         <Header />
       </Route>
       <Nav />
+            <Route path="/home">
+        <Home Item={Item} />
+      </Route>
       <Route path="/teams">
         <Teams
           characters={characters}
@@ -117,6 +130,7 @@ function App() {
           handleAetherLumine={handleAetherLumine}
           teams={teams}
           setTeams={setTeams}
+          Item={Item}
         />
       </Route>
       <Route path="/characters">
@@ -126,7 +140,7 @@ function App() {
           handleAetherLumine={handleAetherLumine}
         />
       </Route>
-      <Redirect from="/" to="/teams" />
+      <Redirect from="/" to="/home" />
       {/*page ? (
         <Teams
           characters={characters}

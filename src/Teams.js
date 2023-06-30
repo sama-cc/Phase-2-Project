@@ -2,15 +2,6 @@ import React from "react";
 import TeamForm from "./TeamForm";
 import TeamList from "./TeamList";
 import MenuItem from "@mui/material/MenuItem";
-import { styled } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
-
-const Item = styled(Paper)(() => ({
-  backgroundColor: "lightskyblue",
-  padding: 3,
-  textAlign: "center",
-  color: "white",
-}));
 
 function Teams({
   characters,
@@ -18,6 +9,7 @@ function Teams({
   handleAetherLumine,
   teams,
   setTeams,
+  Item
 }) {
   const charOptions = characters.map((option) => (
     <MenuItem key={option.name} value={option.name}>

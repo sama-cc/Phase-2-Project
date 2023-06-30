@@ -6,7 +6,6 @@ import MenuItem from "@mui/material/MenuItem";
 
 export default function SearchBar({
   Item,
-  charsToDisplay,
   setCharsToDisplay,
   characters,
 }) {
