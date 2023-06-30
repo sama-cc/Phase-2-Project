@@ -9,11 +9,11 @@ import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 
 function App() {
-  //const [page, setPage] = useState(true);
+  
   const [characters, setCharacters] = useState([]);
   const [teams, setTeams] = useState([]);
 
-  useEffect(() => {
+  /*useEffect(() => {
     //fetch("https://gsi.fly.dev/characters?limit=100")
     fetch("https://964ytk-3000.csb.app/characters")
       .then((r) => r.json())
@@ -34,9 +34,8 @@ function App() {
           })
         )
       );
-  }, []);
+  }, []);*/
 
-  /*
   useEffect(() => {
     fetch("http://localhost:3000/characters")
       .then((r) => r.json())
@@ -60,7 +59,6 @@ function App() {
 
 
   }, []);
-  */
 
   const Item = styled(Paper)(() => ({
     backgroundColor: "lightskyblue",
@@ -120,7 +118,7 @@ function App() {
         <Header />
       </Route>
       <Nav />
-            <Route path="/home">
+      <Route path="/home">
         <Home Item={Item} />
       </Route>
       <Route path="/teams">
@@ -141,21 +139,6 @@ function App() {
         />
       </Route>
       <Redirect from="/" to="/home" />
-      {/*page ? (
-        <Teams
-          characters={characters}
-          handleName={handleName}
-          handleAetherLumine={handleAetherLumine}
-          teams={teams}
-          setTeams={setTeams}
-        />
-      ) : (
-        <CharList
-          characters={characters}
-          handleName={handleName}
-          handleAetherLumine={handleAetherLumine}
-        />
-      )*/}
     </main>
   );
 }

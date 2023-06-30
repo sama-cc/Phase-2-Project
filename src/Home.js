@@ -3,14 +3,18 @@ import Grid from "@mui/material/Grid";
 
 export default function Home({ Item }) {
   return (
-    <Grid sx={{ m: 4 }} item xs={12}>
+    <Grid height="100%" sx={{ m: 4 }} item xs={12}>
       <Item
         elevation={8}
-        sx={{
+        style={{
           backgroundImage:
-            "url('https://preview.redd.it/wabt2ui2s7s51.png?width=1080&crop=smart&auto=webp&v=enabled&s=fcdc1209189f9bf83f3c9121426ac35a53dbc133')",
+          "url('https://preview.redd.it/wabt2ui2s7s51.png?width=1080&crop=smart&auto=webp&v=enabled&s=fcdc1209189f9bf83f3c9121426ac35a53dbc133')",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",  
+          height: "100%"
         }}
       >
+        <div className="home">
         <h2>Welcome travellers!</h2>
         <p>
           I have created a tool to help fellow travellers organize, create and
@@ -29,6 +33,7 @@ export default function Home({ Item }) {
         </p>
         <p>Have fun and happy adventuring!</p>
         <p></p>
+        </div>
       </Item>
     </Grid>
   );
