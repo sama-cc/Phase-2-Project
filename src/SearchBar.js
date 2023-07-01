@@ -19,6 +19,12 @@ export default function SearchBar({ Item, setCharsToDisplay, characters }) {
     );
   }
 
+  function enterSearch(e) {
+    if (e.keyCode === 13) {
+      return handleSearch();
+    }
+  }
+
   function handleFilter() {
     if (visionSelect !== "" && weaponSelect === "" && raritySelect === "") {
       return setCharsToDisplay(
@@ -126,6 +132,7 @@ export default function SearchBar({ Item, setCharsToDisplay, characters }) {
             size="small"
             onFocus={() => setSearchText("")}
             onChange={(e) => setSearchText(e.target.value)}
+            onKeyDown={(e) => enterSearch(e)}
             value={searchText}
             name="name"
           />
