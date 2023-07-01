@@ -1,18 +1,18 @@
-import React, { useState } from "react";
-import Button from "@mui/material/Button";
+import React from "react";
+// import Button from "@mui/material/Button";
 
 function Header() {
-  const [login, setLogin] = useState(false);
+  //const [login, setLogin] = useState(false);
 
-  function handleLogin() {
+/*   function handleLogin() {
     setLogin(!login);
   }
-
+ */
   return (
     <div className="main-header">
-      <Button variant="contained" onClick={handleLogin}>
+{/*       <Button variant="contained" onClick={handleLogin}>
         {login ? "Logout" : "Login"}
-      </Button>
+      </Button> */}
     </div>
   );
 }

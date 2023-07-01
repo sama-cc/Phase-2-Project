@@ -5,12 +5,7 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import Box from "@mui/material/Box";
 
-
-export default function SearchBar({
-  Item,
-  setCharsToDisplay,
-  characters,
-}) {
+export default function SearchBar({ Item, setCharsToDisplay, characters }) {
   const [searchText, setSearchText] = useState("");
   const [visionSelect, setVisionSelect] = useState("");
   const [weaponSelect, setWeaponSelect] = useState("");
@@ -18,10 +13,16 @@ export default function SearchBar({
 
   function handleSearch() {
     setCharsToDisplay(
-      characters.filter(
-        (char) => char.name.toLowerCase() === searchText.toLowerCase()
+      characters.filter((char) =>
+        char.name.toLowerCase().includes(searchText.toLowerCase())
       )
     );
+  }
+
+  function enterSearch(e) {
+    if (e.keyCode === 13) {
+      return handleSearch();
+    }
   }
 
   function handleFilter() {
@@ -123,7 +124,7 @@ export default function SearchBar({
 
   return (
     <Box component="form" autoComplete="off">
-      <Grid sx={{ m: 4 }} item xs={12} >
+      <Grid sx={{ m: 4 }} item xs={12}>
         <Item elevation={8}>
           <TextField
             id="name-search"
@@ -131,6 +132,7 @@ export default function SearchBar({
             size="small"
             onFocus={() => setSearchText("")}
             onChange={(e) => setSearchText(e.target.value)}
+            onKeyDown={(e) => enterSearch(e)}
             value={searchText}
             name="name"
           />

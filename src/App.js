@@ -2,18 +2,17 @@ import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import Nav from "./Nav";
 import Teams from "./Teams";
-import Home from "./Home"
+import Home from "./Home";
 import { Redirect, Route } from "react-router-dom";
 import CharContainer from "./CharContainer";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 
 function App() {
-  
   const [characters, setCharacters] = useState([]);
   const [teams, setTeams] = useState([]);
 
-  /*useEffect(() => {
+  useEffect(() => {
     //fetch("https://gsi.fly.dev/characters?limit=100")
     fetch("https://964ytk-3000.csb.app/characters")
       .then((r) => r.json())
@@ -34,8 +33,8 @@ function App() {
           })
         )
       );
-  }, []);*/
-
+  }, []);
+  /*
   useEffect(() => {
     fetch("http://localhost:3000/characters")
       .then((r) => r.json())
@@ -58,7 +57,7 @@ function App() {
       );
 
 
-  }, []);
+  }, []);*/
 
   const Item = styled(Paper)(() => ({
     backgroundColor: "lightskyblue",
