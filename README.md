@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# Genshin Team Creator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Genshin Team Creator (GTC) is a Single Page Application built in React that helps players create, edit, and save different team compositions for the game "Genshin Impact".
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+GTC is an application designed to be a tool to assist in creating and saving team compisitions for Genshin Impact.  Genshin Impact has a large cast of characters from which teams of four can be assembled.  The game rewards players for creating different team compsitions to take on different challenges and enemies. GTC streamlines the team-building process by helping players keep track of the different teams they have assembled and displays the character details for each team member in an easy-to-read manner.  Additionally, GTC makes it easy to edit one's pre-existing teams with the click of a button. If a player wants to change the team name, a character or multiple characters in a team it's as simple as selecting a replacement from a drop-down menu.
 
-### `npm start`
+GTC is also great for theory-crafting your next team. On the "Character" page a player can search or filter characters by name, vision type, weapon or rarity.  This makes it as-easy-as-ever to find the best characters for your team!
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+With its intuitive layout and simple-but-feature-rich design GTC is the premier Team Creator app for Genshin Impact and more features will be coming in the future!
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+Navigate to https://github.com/sama-cc/phase-2-project and click on the green <> CODE button. Choose "Download ZIP" and download the zip file. Once downloaded, unzip the file and then open the file "index.html" in your browser.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
+## Usage
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Video Walkthrough
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Follow the link below for a video walkthrough.
 
-### Analyzing the Bundle Size
+## FAQ
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Q. When I input a pokemon's name or Pokedex Entry # into the Entry Box I get the following error. "Pokemon (1 or 2) was left blank or is not a valid Pokemon. Please check your spelling."
 
-### Making a Progressive Web App
+    A. This error happens when a pokemon's name is misspelled or does not refer to a valid first generation pokemon. This can also be caused if the Pokedex Entry # is not a valid Pokedex Entry # (above 151).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Q. Can I input pokemon from another generation?
 
-### Advanced Configuration
+    A. Only Generation 1 is supported at this time.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Q. I noticed information that is innacurate. Can you please fix it?
 
-### Deployment
+    A. Please contact me using the email listed in the Support section.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Q. I am experiencing a bug. Can I get help?
 
-### `npm run build` fails to minify
+    A. Please contact me using the email listed in the Support section.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Roadmap
+
+- Change card backs to match the color of the rarity for each character.
+- Show the Elemental Resonance for each team.
+- Show recommended teams based on characters already chosen.
+- Show recommended character builds.
+
+## Support
+
+If you have any questions regarding how PokeComparer is used or encounter any issues please feel free to contact me using the contact information below.
+
+Email: sam.camhi@gmail.com
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first
+to discuss what you would like to change.
+
+## Credit
+
+Below is a list of materials that I did not create and must give credit:
+
+1. 
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
