@@ -16,9 +16,15 @@ Navigate to https://github.com/sama-cc/phase-2-project and click on the green <>
 
 ## Usage
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![GTC Home](./src/images/genshin-home-numbered.jpg)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![GTC Character Page](./src/images/genshin-characters-numbered.jpg)
+
+![GTC Create Team](./src/images/genshin-create-team-numbered.jpg)
+
+![GTC Team List](./src/images/genshin-team-list-numbered.jpg)
+
+![GTC Team Edit](./src/images/genshin-team-edit-numbered.jpg)
 
 ## Video Walkthrough
 
