@@ -177,7 +177,7 @@ to discuss what you would like to change.
 
 Below is a list of materials that I did not create and must give credit:
 
-1. 
+1. https://www.geeksforgeeks.org/how-to-download-a-react-project-from-github-and-run-in-my-pc/ - Used as a template for installation instructions.
 
 ## License
 
