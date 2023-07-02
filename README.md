@@ -14,7 +14,7 @@ With its intuitive layout and simple-but-feature-rich design GTC is the premier 
 
 Prerequisites:
 
-1.Node.js: Node.js is a JavaScript runtime environment that is used for building server-side applications. It is also required for running React projects. You can download the latest version of Node.js from their official website.
+1. Node.js: Node.js is a JavaScript runtime environment that is used for building server-side applications. It is also required for running React projects. You can download the latest version of Node.js from their official website.
 
 2. npm (Node Package Manager): npm is a package manager for Node.js that allows you to download and install packages and dependencies that are required for your React project. npm is included with Node.js, so you don’t have to install it separately.
 
@@ -22,33 +22,43 @@ Prerequisites:
 
 Once you have these prerequisites installed, you can follow these steps to download Genshin Team Creator from Github and run it on your computer:
 
-It is highly recommended to fork the repository before cloning it.  If you do so then follow the example below but substitute your forked repository addressinstead of the original address.
+It is highly recommended to fork the repository before cloning it.  If you do so then follow the example below but substitute your forked repository address instead of the original address.
 
 1. Clone the repository: Here are the steps to clone a GitHub repository for a React app:
 
 Open your web browser and navigate to https://github.com/sama-cc/phase-2-project.
 On the right-hand side of the page, click on the “Code” button.
 In the drop-down menu, select HTTPS (or the method that you prefer, we will be using HTTPS in the example) to clone the repository.
+
 Click the “Copy” button to copy the URL of the repository to your clipboard.
 
 Now Open the terminal or command prompt and navigate to the directory where you want to store this repository. Then, run the following command to clone the repository:
 
-git clone https://github.com/sama-cc/phase-2-project.git
+`git clone https://github.com/sama-cc/phase-2-project.git`
 
 2. Navigate to the project directory: After the repository is cloned, navigate to the project directory using the following command:
 
-cd <repo-name>
+`cd <repo-name>`
 
 3. Install dependencies: Once you’re inside the project directory, run the following command to install the dependencies required for the project:
 
-npm install
+`npm install`
+
 This command will read the package.json file in the repository and download all of the dependencies listed there.
 
 In case of issues shown after the npm install, run the below to automatically fix the issues:
-npm audit fix
+
+`npm audit fix`
+
 4. Start the development server by running the following command:
 
-$ npm run dev
+`npm run dev`
+
+Genshin Team Creator uses json server as its back-end.
+
+Information about json server can be found [here](https://github.com/typicode/json-server).
+
+The json server template I use for (GTC) as well as instructions on how to use it can be found [here](https://github.com/sama-cc/json-server-template).
 
 ## Usage
 
