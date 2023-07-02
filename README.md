@@ -1,70 +1,138 @@
-# Getting Started with Create React App
+# Genshin Team Creator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Genshin Team Creator (GTC) is a Single Page Application built in React that helps players create, edit, and save different team compositions for the game "Genshin Impact".
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+GTC is an application designed to be a tool to assist in creating and saving team compositions for Genshin Impact.  Genshin Impact has a large cast of characters from which teams of four can be assembled.  The game rewards players for creating different team compsitions to take on different challenges and enemies. GTC streamlines the team-building process by helping players keep track of the different teams they have assembled and displays the character details for each team member in an easy-to-read manner.  Additionally, GTC makes it easy to edit one's pre-existing teams with the click of a button. If a player wants to change the team name, a character or multiple characters in a team it's as simple as selecting a replacement from a drop-down menu.
 
-### `npm start`
+GTC is also great for theory-crafting your next team. On the "Character" page a player can search or filter characters by name, vision type, weapon or rarity.  This makes it as-easy-as-ever to find the best characters for your team!
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+With its intuitive layout and simple-but-feature-rich design GTC is the premier Team Creator app for Genshin Impact and more features will be coming in the future!
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+Navigate to https://github.com/sama-cc/phase-2-project and click on the green <> CODE button. Choose "Download ZIP" and download the zip file. Once downloaded, unzip the file and then open the file "index.html" in your browser.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Usage
 
-### `npm run build`
+### Home
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Upon loading the application in your web browser you will see the following displayed:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![GTC Home](./src/images/genshin-home-numbered.jpg)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+ - Here on the home page you can see a brief greeting message.
 
-### `npm run eject`
+1. Nav bar - Use the Nav Bar to navigate between the "Home", "Characters" and "Teams" pages. 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Characters
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This page contains a card-based grid-style character list containing all available characters. The Search Bar can be used to find a specific character and the filters can be used to narrow down characters based on selected parameters.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![GTC Character Page](./src/images/genshin-characters-numbered.jpg)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Name Search - This input field on the search bar allows for searching through the character list by character name. Partial matches are allowed. (ex. searching the letter "b" will return any character with the letter "b" in their name) This input is not case-sensitive. The search button must be activated or the "Enter" key must be pushed to initiate the name search.
 
-## Learn More
+2. Search Button - Activating this button will initiate the name search using whatever was entered in the Name Search input field.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Filter Option Selectors - Three seperate drop=down selectors can be used to filter the character list. Any combination of filters can be used. 
+    - Vision selector - This allows for filtering the character list by Vision type.
+    - Weapon selector - This allows for filtering the character list by Weapon type.
+    - Rarity selector - This allows for filtering the character list by Rarity (4 Star or 5 Star).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. Filter Button - Activating the filter button initiates the filter parameters of the character list.
 
-### Code Splitting
+5. Reset Button - Resets the search and filter parameters to default showing all characters in the character list.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+6. Character Card List - By default all characters will be displayed. When a filter or search query is initiated the results of the query will show here.
 
-### Analyzing the Bundle Size
+### Teams
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+The Teams page contains a form for submitting new Teams as well as a Team List that shows all of the already saved teams. The saved teams can be edited or deleted.
 
-### Making a Progressive Web App
+#### Create Team Form
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+![GTC Create Team](./src/images/genshin-create-team-numbered.jpg)
 
-### Advanced Configuration
+1. Team Name Field - This input field is where the name of the team is entered.  If a name is not entered when the team is saved then a name will be autogenerated using the format (Team #) where # is the next unused number in your team names in ascending order.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+2. Character Selectors - Drop down selectors for Character 1-4. As you select a character for each slot the preview for that slot will be updated with that character's image and information in real time. The same character can not be selected more than once for a team.
 
-### Deployment
+3. Character Previews - This area shows a preview of your currently chosen team composition.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+4. Save Button - Activating this button will save the team and add it to the Team List.
 
-### `npm run build` fails to minify
+#### Team List
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![GTC Team List](./src/images/genshin-team-list-numbered.jpg)
+
+1. Team Name - Displays the team's current name.
+
+2. Character Cards - Displays character information for characters 1-4.
+
+3. Edit Button - Activating this button will show the Edit Team Form. Activating this button again will hide the Edit Team Form.
+
+4. Delete Button - Activating this button will delete the corresponding team.
+
+#### Edit Team Form
+
+![GTC Team Edit](./src/images/genshin-team-edit-numbered.jpg)
+
+1. Team Name Field - This input field is where the name of the team is entered.  If a name is not entered when the team is saved then a name will be autogenerated using the format (Team #) where # is the next unused number in your team names in ascending order.
+
+2. Character Selectors - Drop down selectors for Character 1-4. This will be autofilled with the current team composition of the team. The same character cannot be selected more than once for a team.
+
+3. Save Button - Activating this button will update the team with the edited fields.
+
+## Video Walkthrough
+
+Follow the link below for a video walkthrough.
+
+## FAQ
+
+- Q. I keep getting an alert saying "The character is already on the team!"
+
+    A. Currently, in Genshin Impact, you cannot have the same character twice on your team while playing in singleplayer mode. This application was designed for singleplayer as one does not have control over what characters another player will have in co-op mode.
+
+- Q. When I Search or filter characters on the character page nothing shows up.
+
+    A. This is because no character meets your search or filter criteria.
+
+- Q. I noticed information that is innacurate. Can you please fix it?
+
+    A. Please contact me using the email listed in the Support section.
+
+- Q. I am experiencing a bug. Can I get help?
+
+    A. Please contact me using the email listed in the Support section.
+
+## Roadmap
+
+- Change card backs to match the color of the rarity for each character.
+- Show the Elemental Resonance for each team.
+- Show recommended teams based on characters already chosen.
+- Show recommended character builds.
+- Add dendro characters or new characters in general.
+- Add the different versions of the Traveller.
+
+## Support
+
+If you have any questions regarding how PokeComparer is used or encounter any issues please feel free to contact me using the contact information below.
+
+Email: sam.camhi@gmail.com
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first
+to discuss what you would like to change.
+
+## Credit
+
+Below is a list of materials that I did not create and must give credit:
+
+1. 
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
