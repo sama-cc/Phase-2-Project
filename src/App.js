@@ -9,8 +9,13 @@ import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 
 function App() {
+
+//State for the Character and Team lists used throughoout the app
+
   const [characters, setCharacters] = useState([]);
   const [teams, setTeams] = useState([]);
+
+  //Used to fetch initial data from the API server and set it to state
 
   useEffect(() => {
     fetch("http://localhost:3000/characters")
@@ -36,12 +41,16 @@ function App() {
 
   }, []);
 
+  //Stylized Paper component
+
   const Item = styled(Paper)(() => ({
     backgroundColor: "lightskyblue",
     padding: 3,
     textAlign: "center",
     color: "white",
   }));
+
+  //Used to convert local values for certain names that did not match the external API names
 
   function handleName(name) {
     switch (name) {
@@ -71,6 +80,8 @@ function App() {
         return name;
     }
   }
+
+  //Converts local name value to match external API that is a different source from above
 
   function handleAetherLumine(name) {
     return name === "Traveller (male)" ? (

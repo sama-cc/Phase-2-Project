@@ -11,11 +11,16 @@ function Teams({
   setTeams,
   Item
 }) {
+
+  //Used as the option data for the Select drop-dwon element
+
   const charOptions = characters.map((option) => (
     <MenuItem key={option.name} value={option.name}>
       {option.name}
     </MenuItem>
   ));
+
+  //Used in the Create Team Form for the Character Preview data
 
   function getCharData(char) {
     const charData = characters.find((c) => c.name === char);
@@ -36,7 +41,6 @@ function Teams({
   return (
     <div className="team-container">
       <TeamForm
-        characters={characters}
         charOptions={charOptions}
         teams={teams}
         setTeams={setTeams}
@@ -46,7 +50,6 @@ function Teams({
         getCharData={getCharData}
       />
       <TeamList
-        characters={characters}
         handleAetherLumine={handleAetherLumine}
         handleName={handleName}
         teams={teams}

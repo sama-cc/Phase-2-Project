@@ -1,6 +1,8 @@
 import React from "react";
 import Grid from "@mui/material/Grid";
 
+//Landing page for the app
+
 export default function Home({ Item }) {
   return (
     <Grid height="100%" sx={{ m: 4 }} item xs={12}>

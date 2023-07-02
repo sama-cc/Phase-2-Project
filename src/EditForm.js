@@ -14,6 +14,9 @@ export default function EditForm({
   setTeams,
   charOptions,
 }) {
+
+//Object used as state to hold the Edit Form Data
+
   const [editData, setEditData] = useState({
     char1: char1,
     char2: char2,
@@ -23,9 +26,13 @@ export default function EditForm({
     id: id,
   });
 
+  //Changes editData name key value
+
   function handleEditName(e) {
     setEditData({ ...editData, name: e.target.value });
   }
+
+  //Sets editData based on the changed input's name and value. If/else statement used to make sure a character is only selected once in a given team
 
   function handleEditChange(e) {
     if (
@@ -39,6 +46,8 @@ export default function EditForm({
       alert("This character is already on the team!");
     }
   }
+
+  //Used to submit and PATCH editData to the server for the selected team. 
 
   function handleEdit(e, id) {
     e.preventDefault();
@@ -57,7 +66,6 @@ export default function EditForm({
       editData.char3 !== "" &&
       editData.char4 !== ""
     ) {
-      //fetch(`https://964ytk-3000.csb.app/teams${id}`, {
         fetch (`http://localhost:3000/teams/${id}`, {
         method: "PATCH",
         headers: {
@@ -96,7 +104,6 @@ export default function EditForm({
       editData.char3 !== "" &&
       editData.char4 !== ""
     ) {
-      //fetch(`https://964ytk-3000.csb.app/teams${id}`, {
         fetch (`http://localhost:3000/teams/${id}`, {
         method: "PATCH",
         headers: {

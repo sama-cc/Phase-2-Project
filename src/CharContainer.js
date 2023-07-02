@@ -9,7 +9,12 @@ export default function CharContainer({
   handleName,
   handleAetherLumine,
 }) {
+
+  //State used as the array that is mapped to create the Character List
+
   const [charsToDisplay, setCharsToDisplay] = useState(characters);
+
+  //If the Character Page was navigated to on initial load instead of the home page then the Character List would not load the Character data until useEffect was applied
 
   useEffect(() => setCharsToDisplay(characters), [characters]);
 

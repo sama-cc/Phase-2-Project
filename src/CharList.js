@@ -3,27 +3,14 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import StarIcon from "@mui/icons-material/Star";
 
+//This component serves only to display the Character List based on the charsToDisplay state
+
 function CharList({ charsToDisplay, handleAetherLumine, handleName, Item }) {
   let charList = charsToDisplay.map((char) => {
     return (
       <Grid key={char.id} item xs={3}>
         <Item elevation={8}>
-          {/*
-          <div
-            className="nameBar"
-            style={{
-              backgroundImage: `url("https://cdn.wanderer.moe/genshin-impact/namecards/${handleName(
-                char.name.toLowerCase()
-              )}-bar.png")`,
-              width: "auto",
-              height: "auto",
-            }}
-          >
-          */}
           <h2>{char.name}</h2>
-          {/*
-          </div>
-        */}
           {char.name === "Traveller (male)" ||
           char.name === "Traveller (female)" ? (
             handleAetherLumine(char.name)

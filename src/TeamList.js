@@ -6,7 +6,6 @@ import Collapse from "@mui/material/Collapse";
 import EditForm from "./EditForm";
 
 function TeamList({
-  characters,
   handleAetherLumine,
   handleName,
   teams,
@@ -15,7 +14,12 @@ function TeamList({
   Item,
   getCharData,
 }) {
+
+  //State used to select which team to hide/unhide the Edit Team Form
+
   const [checked, setChecked] = useState(0);
+
+  //Deletes the team from the server. Uses a confirmation prompt before deleting
 
   function handleDelete(id, name) {
     const response = window.confirm(`Are you sure you want to Delete ${name}?`);
@@ -26,6 +30,8 @@ function TeamList({
       }).then(() => setTeams(() => teams.filter((t) => t.name !== name)));
     }
   }
+
+  //Toggles the Edit Team Form when the Edit Button for a team (indicated by the 'id' parameter) is activated
 
   function handleHide(id) {
     return checked === id ? setChecked(0) : setChecked(id);

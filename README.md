@@ -185,9 +185,13 @@ Below is a list of materials that I did not create and must give credit:
 
 3. https://cdn.wanderer.moe/genshin-impact/namecards/ - Used to populate character images.
 
-4. https://api.genshin.dev/ - Original source for the db.json used in the json server back-end.
+4. https://static.wikia.nocookie.net/gensin-impact/images - Used to populate character images for the travellers (Aether and Lumine).
 
-5. https://www.reddit.com/r/Genshin_Impact/comments/j8fvow/genshin_impact_wallpapers_made_with_wallpapers/ - Used as a background for home page and html body.
+5. https://www.hoyolab.com/article/412910 - Source used as blank character image until a character is selected in the Create Team Form.
+
+6. https://api.genshin.dev/ - Original source for the db.json used in the json server back-end.
+
+7. https://www.reddit.com/r/Genshin_Impact/comments/j8fvow/genshin_impact_wallpapers_made_with_wallpapers/ - Used as a background for home page and html body.
 
 ## License
 

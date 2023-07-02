@@ -2,6 +2,9 @@ import React from "react";
 // import Button from "@mui/material/Button";
 
 function Header() {
+
+  //Rudimentary Login code for a future-planned deployment
+
   //const [login, setLogin] = useState(false);
 
 /*   function handleLogin() {

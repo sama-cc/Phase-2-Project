@@ -5,7 +5,6 @@ import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 
 function TeamForm({
-  characters,
   charOptions,
   teams,
   setTeams,
@@ -14,6 +13,9 @@ function TeamForm({
   handleName,
   getCharData,
 }) {
+
+  //Object used as state for controlled form inputs
+
   const [formData, setFormData] = useState({
     char1: "",
     char2: "",
@@ -22,9 +24,13 @@ function TeamForm({
     name: "",
   });
 
+  //Sets formData name key value
+
   function handleTeamName(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
+
+  //Sets formData based on the changed input's name and value. If/else statement used to make sure a character is only selected once in a given team
 
   function handleChange(e) {
     if (
@@ -38,6 +44,8 @@ function TeamForm({
       alert("This character is already on the team!");
     }
   }
+
+  //Used to submit and POST formData to the server as a new team. Autogenerates a team name if one was not supplied. Checks that the required four characters have been supplied before submission.
 
   function handleSubmit(e) {
     e.preventDefault();

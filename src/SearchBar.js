@@ -6,10 +6,15 @@ import MenuItem from "@mui/material/MenuItem";
 import Box from "@mui/material/Box";
 
 export default function SearchBar({ Item, setCharsToDisplay, characters }) {
+
+  //States are used in the search and filter functions below
+
   const [searchText, setSearchText] = useState("");
   const [visionSelect, setVisionSelect] = useState("");
   const [weaponSelect, setWeaponSelect] = useState("");
   const [raritySelect, setRaritySelect] = useState("");
+
+  //Takes in searchText state and filters displayed characters to match criteria
 
   function handleSearch() {
     setCharsToDisplay(
@@ -19,11 +24,15 @@ export default function SearchBar({ Item, setCharsToDisplay, characters }) {
     );
   }
 
+  //Allows search on "Enter" key press
+
   function enterSearch(e) {
     if (e.keyCode === 13) {
       return handleSearch();
     }
   }
+
+   //Takes in visionSelect, weaponSelect, and raritySelect states and filters displayed characters to match criteria. If/else statement determines how to handle the filtering based on how many filters were selected
 
   function handleFilter() {
     if (visionSelect !== "" && weaponSelect === "" && raritySelect === "") {
@@ -113,6 +122,8 @@ export default function SearchBar({ Item, setCharsToDisplay, characters }) {
       );
     }
   }
+
+  //Resets the search form states and displayed characters
 
   function handleReset() {
     setSearchText("");

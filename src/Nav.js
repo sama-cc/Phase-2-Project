@@ -4,6 +4,8 @@ import ButtonGroup from "@mui/material/ButtonGroup";
 import Box from "@mui/material/Box";
 import { Link } from "react-router-dom";
 
+//Uses React Router for navigation, Link integrated into Material UI Button component
+
 function Nav() {
   return (
     <div className="nav">
