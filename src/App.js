@@ -13,29 +13,6 @@ function App() {
   const [teams, setTeams] = useState([]);
 
   useEffect(() => {
-    //fetch("https://gsi.fly.dev/characters?limit=100")
-    fetch("https://964ytk-3000.csb.app/characters")
-      .then((r) => r.json())
-      .then((data) =>
-        setCharacters(
-          data.map((char) => {
-            return char;
-          })
-        )
-      );
-
-    fetch("https://964ytk-3000.csb.app/teams")
-      .then((r) => r.json())
-      .then((data) =>
-        setTeams(
-          data.map((team) => {
-            return team;
-          })
-        )
-      );
-  }, []);
-  /*
-  useEffect(() => {
     fetch("http://localhost:3000/characters")
       .then((r) => r.json())
       .then((data) =>
@@ -57,7 +34,7 @@ function App() {
       );
 
 
-  }, []);*/
+  }, []);
 
   const Item = styled(Paper)(() => ({
     backgroundColor: "lightskyblue",

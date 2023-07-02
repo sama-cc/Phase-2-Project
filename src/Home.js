@@ -8,7 +8,7 @@ export default function Home({ Item }) {
         elevation={8}
         style={{
           backgroundImage:
-            "url('https://preview.redd.it/wabt2ui2s7s51.png?width=1080&crop=smart&auto=webp&v=enabled&s=fcdc1209189f9bf83f3c9121426ac35a53dbc133')",
+            "url('https://i.imgur.com/FniXSL8.png')",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
         }}

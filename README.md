@@ -179,6 +179,14 @@ Below is a list of materials that I did not create and must give credit:
 
 1. https://www.geeksforgeeks.org/how-to-download-a-react-project-from-github-and-run-in-my-pc/ - Used as a template for installation instructions.
 
+2. https://cdn2.steamgriddb.com/file/sgdb-cdn/hero/75e913d400755a0d2782fc65e2035e97.webp - Used as the header background.
+
+3. https://cdn.wanderer.moe/genshin-impact/namecards/ - Used to populate character images.
+
+4. https://api.genshin.dev/ - Original source for the db.json used in the json serve back-end.
+
+5. https://www.reddit.com/r/Genshin_Impact/comments/j8fvow/genshin_impact_wallpapers_made_with_wallpapers/ - Used as a background for home page and html body.
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
