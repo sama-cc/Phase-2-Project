@@ -91,7 +91,7 @@ This page contains a card-based grid-style character list containing all availab
 
 5. Reset Button - Resets the search and filter parameters to default showing all characters in the character list.
 
-6. Character Card List - By default all characters will be displayed. When a filter or search query is initiated the results of the query will show be here.
+6. Character Card List - By default all characters will be displayed. When a filter or search query is initiated the results of the query will be shown here.
 
 ### Teams
 
