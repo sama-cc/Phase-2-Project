@@ -135,6 +135,8 @@ The Teams page contains a form for submitting new Teams as well as a Team List t
 
 Follow the link below for a video walkthrough.
 
+[Genshin Team Creator - Youtube](https://youtu.be/2QSljehk1OU)
+
 ## FAQ
 
 - Q. I keep getting an alert saying "The character is already on the team!"
