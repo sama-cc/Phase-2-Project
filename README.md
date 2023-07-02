@@ -164,7 +164,7 @@ Follow the link below for a video walkthrough.
 
 ## Support
 
-If you have any questions regarding how PokeComparer is used or encounter any issues please feel free to contact me using the contact information below.
+If you have any questions regarding how Genshin Team Comparer is used or encounter any issues please feel free to contact me using the contact information below.
 
 Email: sam.camhi@gmail.com
 
