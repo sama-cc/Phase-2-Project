@@ -16,9 +16,36 @@ Navigate to https://github.com/sama-cc/phase-2-project and click on the green <>
 
 ## Usage
 
+### Home
+
+Upon loading the application in your web browser you will see the following displayed:
+
 ![GTC Home](./src/images/genshin-home-numbered.jpg)
 
+ - Here on the home page you can see a brief greeting message.
+
+1. Nav bar - Use the Nav Bar to navigate between the "Home", "Characters" and "Teams" pages. 
+
+### Characters
+
+This page contains a card-based grid-style character list containing all available characters. The Search Bar can be used to find a specific character and the filters can be used to narrow down characters based on selected parameters.
+
 ![GTC Character Page](./src/images/genshin-characters-numbered.jpg)
+
+1. Name Search - This input field on the search bar allows for searching through the character list by character name. Partial matches are allowed. (ex. searching the letter "b" will return any character with the letter "b" in their name) This input is not case-sensitive. The search button must be activated or the "Enter" key must be pushed to initiate the name search.
+
+2. Search Button - Activating this button will initiate the name search using whatever was entered in the Name Search input field.
+
+3. Filter Option Selectors - Three seperate drop=down selectors can be used to filter the character list. Any combination of filters can be used. 
+    - Vision selector - This allows for filtering the character list by Vision type.
+    - Weapon selector - This allows for filtering the character list by Weapon type.
+    - Rarity selector - This allows for filtering the character list by Rarity (4 Star or 5 Star).
+
+4. Filter Button - Activating the filter button initiates the filter parameters of the character list.
+
+5. Reset Button - Resets the search and filter parameters to default showing all characters in the character list.
+
+6. Character Card List - By default all characters will be displayed. When a filter or search query is initiated the results of the query will show here.
 
 ![GTC Create Team](./src/images/genshin-create-team-numbered.jpg)
 
