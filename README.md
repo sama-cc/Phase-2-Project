@@ -183,7 +183,7 @@ Below is a list of materials that I did not create and must give credit:
 
 3. https://cdn.wanderer.moe/genshin-impact/namecards/ - Used to populate character images.
 
-4. https://api.genshin.dev/ - Original source for the db.json used in the json serve back-end.
+4. https://api.genshin.dev/ - Original source for the db.json used in the json server back-end.
 
 5. https://www.reddit.com/r/Genshin_Impact/comments/j8fvow/genshin_impact_wallpapers_made_with_wallpapers/ - Used as a background for home page and html body.
 
