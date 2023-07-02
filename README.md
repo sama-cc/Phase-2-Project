@@ -73,7 +73,7 @@ The Teams page contains a form for submitting new Teams as well as a Team List t
 
 3. Edit Button - Activating this button will show the Edit Team Form. Activating this button again will hide the Edit Team Form.
 
-4. Delete Button - Activating this button will delete the corresponding team.
+4. Delete Button - Activating this button will delete the corresponding team. A confirmation prompt will appear before the team is deleted.
 
 #### Edit Team Form
 
