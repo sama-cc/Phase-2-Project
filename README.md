@@ -38,7 +38,7 @@ Now Open the terminal or command prompt and navigate to the directory where you 
 
 2. Navigate to the project directory: After the repository is cloned, navigate to the project directory using the following command:
 
-`cd <repo-name>`
+`cd phase-2-project`
 
 3. Install dependencies: Once you’re inside the project directory, run the following command to install the dependencies required for the project:
 
