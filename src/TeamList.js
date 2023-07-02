@@ -18,9 +18,13 @@ function TeamList({
   const [checked, setChecked] = useState(0);
 
   function handleDelete(id, name) {
-    fetch(`http://localhost:3000/teams/${id}`, {
-      method: "DELETE",
-    }).then(() => setTeams(() => teams.filter((t) => t.name !== name)));
+    const response = window.confirm(`Are you sure you want to Delete ${name}?`);
+
+    if (response === true) {
+      fetch(`http://localhost:3000/teams/${id}`, {
+        method: "DELETE",
+      }).then(() => setTeams(() => teams.filter((t) => t.name !== name)));
+    }
   }
 
   function handleHide(id) {
