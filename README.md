@@ -10,7 +10,7 @@ GTC is also great for theory-crafting your next team. On the "Character" page a 
 
 With its intuitive layout and simple-but-feature-rich design GTC is the premier Team Creator app for Genshin Impact and more features will be coming in the future!
 
-A working deployed version can be found [here](https://genshin-team-creator.netlify.app/home).
+A working deployed version can be found [here](https://genshin-team-creator.netlify.app).
 
 ## Installation
 
