@@ -66,7 +66,7 @@ export default function EditForm({
       editData.char3 !== "" &&
       editData.char4 !== ""
     ) {
-        fetch (`http://localhost:3000/teams/${id}`, {
+        fetch (`https://genshin-team-creator-back-end.onrender.com/teams/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -104,7 +104,7 @@ export default function EditForm({
       editData.char3 !== "" &&
       editData.char4 !== ""
     ) {
-        fetch (`http://localhost:3000/teams/${id}`, {
+        fetch (`https://genshin-team-creator-back-end.onrender.com/teams/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

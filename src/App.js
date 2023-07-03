@@ -18,7 +18,7 @@ function App() {
   //Used to fetch initial data from the API server and set it to state
 
   useEffect(() => {
-    fetch("http://localhost:3000/characters")
+    fetch("https://genshin-team-creator-back-end.onrender.com/characters")
       .then((r) => r.json())
       .then((data) =>
         setCharacters(
@@ -28,7 +28,7 @@ function App() {
         )
       );
 
-      fetch("http://localhost:3000/teams")
+      fetch("https://genshin-team-creator-back-end.onrender.com/teams")
       .then((r) => r.json())
       .then((data) =>
         setTeams(

@@ -63,7 +63,7 @@ function TeamForm({
       formData.char3 !== "" &&
       formData.char4 !== ""
     ) {
-      fetch("http://localhost:3000/teams", {
+      fetch("https://genshin-team-creator-back-end.onrender.com/teams", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -96,7 +96,7 @@ function TeamForm({
       formData.char3 !== "" &&
       formData.char4 !== ""
     ) {
-      fetch("http://localhost:3000/teams", {
+      fetch("https://genshin-team-creator-back-end.onrender.com/teams", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

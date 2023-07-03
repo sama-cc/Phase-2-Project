@@ -25,7 +25,7 @@ function TeamList({
     const response = window.confirm(`Are you sure you want to Delete ${name}?`);
 
     if (response === true) {
-      fetch(`http://localhost:3000/teams/${id}`, {
+      fetch(`https://genshin-team-creator-back-end.onrender.com/teams/${id}`, {
         method: "DELETE",
       }).then(() => setTeams(() => teams.filter((t) => t.name !== name)));
     }
