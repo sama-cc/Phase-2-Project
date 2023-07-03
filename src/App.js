@@ -3,7 +3,7 @@ import Header from "./Header";
 import Nav from "./Nav";
 import Teams from "./Teams";
 import Home from "./Home";
-import { Redirect, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import CharContainer from "./CharContainer";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
@@ -124,8 +124,7 @@ function App() {
           handleName={handleName}
           handleAetherLumine={handleAetherLumine}
         />
-      </Route>
-      <Redirect from="/" to="/home" />
+      </Route>      
     </main>
   );
 }
