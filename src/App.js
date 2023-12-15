@@ -54,28 +54,24 @@ function App() {
 
   function handleName(name) {
     switch (name) {
+      case "amber":
+        return "ambor";
+      case "noelle":
+        return "noel";  
+      case "jean":
+        return "qin";
+      case "yanfei":
+        return "feiyan";
       case "hu tao":
-        return "hu-tao";
-      case "kazuha":
-        return "kaedehara-kazuha";
-      case "ayaka":
-        return "kamisato-ayaka";
-      case "ayato":
-        return "kamisato-ayato";
-      case "sara":
-        return "kujou-sara";
+        return "hutao";
       case "raiden shogun":
-        return "raiden-shogun";
-      case "kokomi":
-        return "sangonomiya-kokomi";
-      case "itto":
-        return "arataki-itto";
+        return "shougun";
       case "yun jin":
-        return "yun-jin";
-      case "yae":
-        return "yae-miko";
+        return "yunjin";
       case "kuki":
-        return "kuki-shinobu";
+        return "shinobu";
+      case "thoma":
+        return "tohma";
       default:
         return name;
     }
