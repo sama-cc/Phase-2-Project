@@ -18,7 +18,7 @@ function CharList({ charsToDisplay, handleAetherLumine, handleName, Item }) {
             <img
               src={`https://cdn.wanderer.moe/genshin-impact/character-icons/ui-avataricon-${handleName(
                 char.name.toLowerCase()
-              )}-icon.png`}
+              )}.png`}
               alt={char.name}
               className="card"
             />
