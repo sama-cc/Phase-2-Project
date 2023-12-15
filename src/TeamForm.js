@@ -218,7 +218,7 @@ function TeamForm({
                       handleAetherLumine(formData.char1)
                     ) : formData.char1 === "" ? (
                       <img
-                        src={`https://scontent-atl3-1.xx.fbcdn.net/v/t1.6435-9/193500971_4390187504347051_2259047495056824025_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=b9115d&_nc_ohc=NW_EYf4QdrYAX_JgWrf&_nc_ht=scontent-atl3-1.xx&oh=00_AfCWaKxsp61iPH3LJM7jRw7-zyweRutG_8VFu9XWlVs6Og&oe=64C47211`}
+                        src={`https://upload-os-bbs.hoyolab.com/upload/2021/06/06/88263151/fc67e624b24341ada3971e905ddb6b6b_3261296475255952969.jpg?x-oss-process=image%2Fresize%2Cs_1000%2Fauto-orient%2C0%2Finterlace%2C1%2Fformat%2Cwebp%2Fquality%2Cq_80`}
                         alt="unknown"
                         className="team-char-img"
                       />

@@ -59,9 +59,9 @@ function TeamList({
                     handleAetherLumine(team.char1)
                   ) : (
                     <img
-                      src={`https://cdn.wanderer.moe/genshin-impact/character-icons/${handleName(
+                      src={`https://cdn.wanderer.moe/genshin-impact/character-icons/ui-avataricon-${handleName(
                         team.char1.toLowerCase()
-                      )}-icon.png`}
+                      )}.png`}
                       alt={team.char1}
                       className="team-char-img"
                     />
