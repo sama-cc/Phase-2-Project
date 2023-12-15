@@ -84,9 +84,9 @@ function TeamList({
                     handleAetherLumine(team.char2)
                   ) : (
                     <img
-                      src={`https://cdn.wanderer.moe/genshin-impact/character-icons/${handleName(
+                      src={`https://cdn.wanderer.moe/genshin-impact/character-icons/ui-avataricon-${handleName(
                         team.char2.toLowerCase()
-                      )}-icon.png`}
+                      )}.png`}
                       alt={team.char2}
                       className="team-char-img"
                     />
@@ -109,9 +109,9 @@ function TeamList({
                     handleAetherLumine(team.char3)
                   ) : (
                     <img
-                      src={`https://cdn.wanderer.moe/genshin-impact/character-icons/${handleName(
+                      src={`https://cdn.wanderer.moe/genshin-impact/character-icons/ui-avataricon-${handleName(
                         team.char3.toLowerCase()
-                      )}-icon.png`}
+                      )}.png`}
                       alt={team.char3}
                       className="team-char-img"
                     />
@@ -134,9 +134,9 @@ function TeamList({
                     handleAetherLumine(team.char4)
                   ) : (
                     <img
-                      src={`https://cdn.wanderer.moe/genshin-impact/character-icons/${handleName(
+                      src={`https://cdn.wanderer.moe/genshin-impact/character-icons/ui-avataricon-${handleName(
                         team.char4.toLowerCase()
-                      )}-icon.png`}
+                      )}.png`}
                       alt={team.char4}
                       className="team-char-img"
                     />
